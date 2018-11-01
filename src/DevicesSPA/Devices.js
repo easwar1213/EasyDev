@@ -16,6 +16,7 @@ import Grid from "@material-ui/core/Grid";
 import StatusStatisticsContainer from './StatusStatisticsContainer';
 import StatusTrendContainer from './StatusTrendContainer';
 import DeviceDetailsIndex from './DeviceDetailsIndex';
+import {Col, Container, Row} from 'reactstrap';
 
 const styles = theme => ({
     root: {
@@ -35,17 +36,13 @@ const gridStyle = {
 
 
 export const DeviceList = (props) => (
-    <Grid container spacing={24}>
-        <Grid item xs={4}>
-        <StatusStatisticsContainer/>
-        </Grid>
-
-        <Grid item xs={8}>
+    <Container className='dashboard'>
+        <Row>
+        <StatusStatisticsContainer/>  
         <StatusTrendContainer/>
-        </Grid>      
-
-        <Grid item xs={12}>
-            <Paper elevation={11}>
+        </Row>
+        <Row>
+        <Paper elevation={11}>
                 <List title="Devices" {...props} perPage={5} sort={{ field: 'telematicsSerialNumber', order: 'DESC' }} >
                     <DeviceGrid />
                     {/* <Datagrid>
@@ -58,9 +55,8 @@ export const DeviceList = (props) => (
                      </Datagrid> */}
                 </List>
             </Paper>
-        </Grid>
-
-    </Grid>
+        </Row>
+      </Container>   
 );
 
 
