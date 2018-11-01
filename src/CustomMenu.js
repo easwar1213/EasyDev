@@ -49,7 +49,7 @@ const items = [
 const styles = theme => ({
     root: {
         width: '92%',
-        hieght: '100%',
+        height: '100%',
         maxWidth: 250,
         //  backgroundColor: theme.palette.background.paper,
         // backgroundColor: 'grey',
