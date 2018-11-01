@@ -16,8 +16,6 @@ import Grid from "@material-ui/core/Grid";
 import StatusStatisticsContainer from './StatusStatisticsContainer';
 import StatusTrendContainer from './StatusTrendContainer';
 import DeviceDetailsIndex from './DeviceDetailsIndex';
-import '../scss/app.scss';
-
 
 const styles = theme => ({
     root: {
@@ -44,11 +42,7 @@ export const DeviceList = (props) => (
 
         <Grid item xs={8}>
         <StatusTrendContainer/>
-        </Grid>
-
-        <Grid item xs={12}>
-        <DeviceDetailsIndex/>
-        </Grid>
+        </Grid>      
 
         <Grid item xs={12}>
             <Paper elevation={11}>

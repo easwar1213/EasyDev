@@ -2,7 +2,6 @@ import React, {PureComponent} from 'react';
 import {Badge} from 'reactstrap';
 import Panel from '../components/Panel';
 import Table from '../components/table/Table';
-import '../scss/app.scss';
 
 class DeviceDetails extends PureComponent {
   render() {

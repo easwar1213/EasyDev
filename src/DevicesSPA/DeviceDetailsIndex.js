@@ -1,7 +1,6 @@
 import React, {PureComponent} from 'react';
 import {Col, Container, Row} from 'reactstrap';
 import DeviceDetails from './DeviceDetails';
-import '../scss/app.scss';
 
 class DeviceDetailsIndex extends PureComponent {
   render() {
