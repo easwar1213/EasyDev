@@ -14,7 +14,11 @@ import Chip from '@material-ui/core/Chip';
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import StatusStatisticsContainer from './StatusStatisticsContainer';
-import StatusTrendContainer from './StatusTrendContainer'
+import StatusTrendContainer from './StatusTrendContainer';
+import DeviceDetailsIndex from './DeviceDetailsIndex';
+import '../scss/app.scss';
+
+
 const styles = theme => ({
     root: {
         width: '100%',
@@ -40,6 +44,10 @@ export const DeviceList = (props) => (
 
         <Grid item xs={8}>
         <StatusTrendContainer/>
+        </Grid>
+
+        <Grid item xs={12}>
+        <DeviceDetailsIndex/>
         </Grid>
 
         <Grid item xs={12}>

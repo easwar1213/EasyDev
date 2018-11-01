@@ -22,7 +22,7 @@
     "react-i18next": "^7.12.0",
     "react-scripts": "1.1.4",
     "react-table": "^6.8.6",
-    "reactstrap": "^6.4.0",
+    "reactstrap": "^6.5.0",
     "recharts": "^1.1.0",
     "recompose": "^0.30.0",
     "semantic-ui-grid": "^2.3.1",
