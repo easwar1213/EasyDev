@@ -22,8 +22,16 @@ div[class^="MuiPaper"] {
   box-shadow:none !important;
   border-radius:0px !important;
 }
-
+.layout div[class^="MuiDrawer"] svg[class^="MuiSvgIcon"]  { width: 16px !important; height: 16px !important;}
+.layout div[class^="MuiDrawer"] div[class^="Menu"]{ padding-top:15px;}
+.layout div[class^="MuiDrawer"] div[class^="Menu"] a{ padding-left:15px;}
+.layout div[class^="MuiDrawer"] div[class^="Menu"] a > span[class^="MenuItemLink"] { padding-right:10px !important; position:relative; top:-2px;}
+.layout div[class^="MuiDrawer"] div[class^="Menu"] a { font-size:16px; font-weight:400;}
 .dashboardContainer .row > div > div{  max-width:100% !important;     min-height: 100%;}
+
+.headroom button{
+  margin:0px !important;
+}
 
 div[class^="StatusStatisticsContainer"]{  
   width:100% !important;
