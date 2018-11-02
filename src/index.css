@@ -3,3 +3,85 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+.noPadd{
+  padding:0px !important;
+}
+
+/* CUSTOM CSS */
+
+.deviceTable{
+  margin-top:30px;
+}
+.list-page table thead th{
+  font-size:0.875rem;
+  font-weight:600 !important;
+  color:#000000 !important;
+}
+div[class^="MuiPaper"] {
+  box-shadow:none !important;
+  border-radius:0px !important;
+}
+
+.dashboardContainer .row > div > div{  max-width:100% !important;}
+
+div[class^="StatusStatisticsContainer"]{  
+  width:100% !important;
+  max-width:100% !important;
+  box-shadow:none;
+}
+.headroom-wrapper{ height:auto !important;}
+
+div[class^="MuiDrawer"] > div {
+    border: none;
+    margin-top: 0px !important; 
+}
+.MuiPaper-rounded-116{
+  border-radius:0px !important;
+}
+.MuiPaper-elevation11-128{
+  -webkit-box-shadow:0 1px 30px 1px rgba(0, 0, 0, 0.11) !important;
+  box-shadow:0 1px 30px 1px rgba(0, 0, 0, 0.11) !important;
+}
+ div[class^="MuiGrid"] > div[class^="MuiPaper"]{
+   max-width:100% !important;
+   border-radius: 4px !important;
+ }
+svg[class^="MuiSvgIcon"]{
+  fill:#b1c3c8 !important;
+}
+h2[class^="MuiTypography"]{
+  color:#000000 !important;
+}
+
+.headroom-wrapper .headroom  header {
+  background-color:#FFFFFF !important;
+  padding:6px 0px;
+  position: fixed !important;
+}
+.MuiPaper-elevation4-121, .headroom-wrapper .headroom header{
+  -webkit-box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.05) !important;
+}
+.headroom-wrapper .MuiButtonBase-root-182,.headroom-wrapper div[class^="MuiButtonBase"]{
+  margin:0px !important;
+}
+.headroom-wrapper  .WithTheme-WithWidth-AppBar---title-9{ color:#000000 !important;}
+ main[class^="Layout"]{ background-color:#f2f4f7 !important; min-height: 100vh !important; margin-top:60px !important;}
+/* .Menu-root-328{ position:fixed !important;} */
+.Menu-root-328{ max-width:225px !important}
+
+div[class^="MuiDrawer"] div[class^="MuiPaper"] div[class^="Menu"]{
+  width:100% !important;
+} 
+
+
+.recharts-wrapper, .recharts-wrapper svg{ width:100% !important;}
+.list-page span[class^="MuiButton"]{ color:#000000;}
+.list-page span[class^="MuiButton"] span{ text-transform:capitalize !important; font-weight: 600; }
+
+
+
+
+
+
+

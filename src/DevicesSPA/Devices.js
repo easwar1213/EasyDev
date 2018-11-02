@@ -36,27 +36,31 @@ const gridStyle = {
 
 
 export const DeviceList = (props) => (
-    <Container className='dashboard'>
-        <Row>
-        <StatusStatisticsContainer/>  
-        <StatusTrendContainer/>
+    <div className='dashboard dashboardContainer noPadd'>
+        <Row>   
+            <Col xs={12} sm={12} md={5}>
+                <StatusStatisticsContainer/>  
+            </Col>
+            <Col xs={12} sm={12} md={7}>
+                <StatusTrendContainer/>
+            </Col>
+            <Col xs={12} className="deviceTable">
+                <Paper elevation={11}>
+                    <List title="Devices" {...props} perPage={5} sort={{ field: 'telematicsSerialNumber', order: 'DESC' }} >
+                        <DeviceGrid />
+                        {/* <Datagrid>
+                            <TextField label="Status" source="avaiabilityStatus" />
+                            <TextField label="Serial#" source="telematicsSerialNumber" />
+                            <TextField label="Device" source="model" />
+                            <TextField label="Asset" source="assetName" />
+                            <TextField label="Last Comm." source="lastCommunicated" />
+                        <ShowButton />
+                        </Datagrid> */}
+                    </List>
+                </Paper>
+            </Col>
         </Row>
-        <Row>
-        <Paper elevation={11}>
-                <List title="Devices" {...props} perPage={5} sort={{ field: 'telematicsSerialNumber', order: 'DESC' }} >
-                    <DeviceGrid />
-                    {/* <Datagrid>
-                        <TextField label="Status" source="avaiabilityStatus" />
-                        <TextField label="Serial#" source="telematicsSerialNumber" />
-                        <TextField label="Device" source="model" />
-                        <TextField label="Asset" source="assetName" />
-                        <TextField label="Last Comm." source="lastCommunicated" />
-                    <ShowButton />
-                     </Datagrid> */}
-                </List>
-            </Paper>
-        </Row>
-      </Container>   
+      </div>   
 );
 
 
