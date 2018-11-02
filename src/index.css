@@ -81,6 +81,19 @@ h2[class^="MuiTypography"]{
 
 div[class^="MuiDrawer"] div[class^="MuiPaper"] div[class^="Menu"]{
   width:100% !important;
+ 
+} 
+div[class^="MuiDrawer"] div[class^="MuiPaper"] div[class^="Menu"] ul {
+  position: absolute;    bottom: 0px;
+}
+div[class^="MuiDrawer"] div[class^="MuiPaper"] div[class^="Menu"] ul > div{
+  padding-left: 14px;
+ 
+} 
+
+div[class^="MuiDrawer"] div[class^="MuiPaper"]{
+
+  min-height: calc(100vh + 130px) !important;
 } 
 
 
