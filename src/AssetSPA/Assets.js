@@ -19,8 +19,9 @@ export const AssetList = (props) => (
     //         <ShowButton />
     //     </Datagrid>   
     // </List>
-
+ 
     <Panel lg={12} title="Device Status">
+        
         <Table responsive className='table--bordered'>
           <thead>
           <tr>            

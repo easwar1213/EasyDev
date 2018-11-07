@@ -101,9 +101,40 @@ div[class^="MuiDrawer"] div[class^="MuiPaper"]{
 .list-page span[class^="MuiButton"]{ color:#000000;}
 .list-page span[class^="MuiButton"] span{ text-transform:capitalize !important; font-weight: 600; }
 
+.layout, div[class^="Layout"] { max-width:100% !important;overflow:auto; min-width:auto !important;}
 
-
-
+.card-body .panel__btns{
+  position:absolute;
+  right:20px;
+}
+.card-body .panel__btns button{
+  border: none;
+  background: transparent;
+}
+.card-body .panel__btns button svg{
+  height: 16px;
+  width: 16px;
+  fill:#999;
+}
+.card-body .panel__title{
+  margin-bottom:20px;
+}
+.card-body .panel__title .bold-text{
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #646777;
+  font-weight: bold !important;
+}
+.card-body .table thead th{
+  border-top: none !important;
+  color: #646777 !important;
+  border-bottom-color: #eff1f5 !important;
+  font-size: 14px;
+}
+.card-body .table tbody td{
+  color: #646777;
+  font-size: 14px;
+}
 
 
 
