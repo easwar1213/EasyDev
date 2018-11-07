@@ -112,7 +112,7 @@ export default class Map extends React.Component {
                 //generate your API key
                 googleMapURL: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyD84CRFR44xSC242F5rPodUZ3CqKbUlqMw&v=3.exp&libraries=geometry,drawing,places',
                 loadingElement: <div style={{ height: `100%` }} />,
-                containerElement: <div className='map' style={{ height: `500px` }} />,
+                containerElement: <div className='map' style={{ height: `300px` }} />,
                 mapElement: <div style={{ height: `100%` }} />,
             }),
             withScriptjs,
