@@ -42,7 +42,7 @@ const gridStyle = {
 
 
 export const DeviceList = (props) => (
-    <Container>
+    <Container id="deviceContainer">
         {/* <Row>
             <Col md={12}>
                 <h3 className='page-title'>Device</h3>
@@ -52,7 +52,7 @@ export const DeviceList = (props) => (
             <DynamiclyRefreshedDoughnut />
             <RandomAnimatedLine />
         </Row>
-        <br />
+        
         <Row>
             <DeviceDetails />
             {/* <Panel xs={12} md={12} lg={12} title="Device Status Details">

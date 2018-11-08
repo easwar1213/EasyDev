@@ -47,8 +47,8 @@ div[class^="MuiPaper"] {
 }
 .layout div[class^="MuiDrawer"] svg[class^="MuiSvgIcon"]  { width: 20px !important; height: 20px !important;}
 .layout div[class^="MuiDrawer"] div[class^="Menu"]{ padding-top:15px;}
-.layout div[class^="MuiDrawer"] div[class^="Menu"] a{ padding-left:15px;}
-.layout div[class^="MuiDrawer"] div[class^="Menu"] a > span[class^="MenuItemLink"] { padding-right:16px !important; position:relative; top:-2px;}
+.layout div[class^="MuiDrawer"] div[class^="Menu"] a{ padding-left:18px;}
+.layout div[class^="MuiDrawer"] div[class^="Menu"] a > span[class^="MenuItemLink"] { padding-right:17px !important; position:relative; top:-2px;}
 .layout div[class^="MuiDrawer"] div[class^="Menu"] a { font-size:16px; font-weight:400;}
 .dashboardContainer .row > div > div{  max-width:100% !important; border-radius: 4px !important;  min-height: 100%;}
 
@@ -90,6 +90,7 @@ h2[class^="MuiTypography"]{
   padding:6px 0px;
   position: fixed !important;
 }
+.headroom-wrapper .headroom header{     padding: 6px 4px !important;}
 .MuiPaper-elevation4-121, .headroom-wrapper .headroom header{
   -webkit-box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.05) !important;
   box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.05) !important;
@@ -110,7 +111,7 @@ div[class^="MuiDrawer"] div[class^="MuiPaper"] div[class^="Menu"] ul {
   position: absolute;    bottom: 0px;
 }
 div[class^="MuiDrawer"] div[class^="MuiPaper"] div[class^="Menu"] ul > div{
-  padding-left: 14px;
+  padding-left: 16px;
  
 } 
 
@@ -176,12 +177,30 @@ form div[class^="MuiFormControl"]{ width:auto !important; display:inline-block !
 button, * {
   outline: none !important; 
 }
-@media screen and (max-width: 991px) {
-    .layout .panel{margin-top:20px;}
+.Layout-content-4{
+  padding: 24px !important;
 }
+div[class^="MuiDrawer"] div[class^="MuiPaper"] { 
+  width:100%;
+}
+
+    .layout .panel{margin-bottom:25px;}
+
 @media (min-width: 1200px){
   .container {
     max-width: 100% !important;
+  }
+}
+@media (max-width: 991px){
+  #deviceContainer{
+    max-width:98%;
+    padding:0px;
+  }
+}
+@media (min-width: 992px){
+  #deviceContainer{
+    max-width:calc(100% - 1px);
+    padding:0px;
   }
 }
 
