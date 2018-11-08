@@ -22,7 +22,8 @@ const styles = theme => ({
         height: '10px',
         alignItems: 'center',
         justifyContent: 'flex-start',
-        background: 'url(https://s3.us-east-2.amazonaws.com/industrility-app-image/factory-1536102864354-9078.png)',
+        // background: 'url(https://s3.us-east-2.amazonaws.com/industrility-app-image/factory-1536102864354-9078.png)',
+        background: 'url("../img/Login-Bck.jpg")',
         backgroundSize: 'cover',
     },
     card: {

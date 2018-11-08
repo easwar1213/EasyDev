@@ -49,7 +49,7 @@ div[class^="MuiPaper"] {
 .layout div[class^="MuiDrawer"] div[class^="Menu"]{ padding-top:15px;}
 .layout div[class^="MuiDrawer"] div[class^="Menu"] a{ padding-left:18px;}
 .layout div[class^="MuiDrawer"] div[class^="Menu"] a > span[class^="MenuItemLink"] { padding-right:17px !important; position:relative; top:-2px;}
-.layout div[class^="MuiDrawer"] div[class^="Menu"] a { font-size:16px; font-weight:400;}
+.layout div[class^="MuiDrawer"] div[class^="Menu"] a { font-size:15px; font-weight:400;}
 .dashboardContainer .row > div > div{  max-width:100% !important; border-radius: 4px !important;  min-height: 100%;}
 
 .headroom button{
@@ -79,7 +79,7 @@ div[class^="MuiDrawer"] > div {
    border-radius: 4px !important;
  }
 svg[class^="MuiSvgIcon"]{
-  fill:#b1c3c8 !important;
+  fill:#0F263A !important;
 }
 h2[class^="MuiTypography"]{
   color:#000000 !important;
@@ -130,8 +130,11 @@ div[class^="MuiDrawer"] div[class^="MuiPaper"]{
 } 
 .layout div[class^="MuiDrawer"]{
   overflow:hidden;
-  box-shadow:0 1px 30px 1px rgba(0,0,0,.11);
   background-color:#FFFFFF;
+}
+div[class^="MuiDrawer"] div[class^="MuiPaper"] {
+  -webkit-box-shadow: 0 1px 30px 1px rgba(0,0,0,.11) !important;
+  box-shadow: 0 1px 30px 1px rgba(0,0,0,.11) !important;
 }
 /* .layout div[class^="MuiDrawer"] > div > div{ position:fixed; width:240px;} */
 
@@ -151,7 +154,7 @@ form div[class^="MuiFormControl"]{ width:auto !important; display:inline-block !
 .list-page span[class^="MuiButton"]{ color:#000000;}
 .list-page span[class^="MuiButton"] span{ text-transform:capitalize !important; font-weight: 600; }
 
-.layout, div[class^="Layout"] { max-width:100% !important;   min-width:auto !important;}
+.layout, div[class^="Layout"] { max-width:100% !important;   min-width:auto !important; background: #f2f4f7 !important;}
 
 .card-body .panel__btns{
   position:absolute;
@@ -221,93 +224,157 @@ div[class^="MuiDrawer"] div[class^="MuiPaper"] {
   background: #0F263A;
 }
 .WithTheme-WithWidth-Sidebar---drawerPaper-10 > div > div{
-  background: #0F263A !important;
+  background: #fff !important;
   width: 100% !important;
 }
 .Menu-root-131{width: 100% !important;}
 .MuiDrawer-docked-120 .WithTheme-WithWidth-Sidebar---drawerPaper-10{
   padding-right: 20px !important;
 }
-.WithTheme-WithWidth-Sidebar---drawerPaper-10 > div > div a{color:#fff !important;border-bottom: 1px solid #FBCA00 !important; font-weight: 600 !important;}
-.WithTheme-WithWidth-Sidebar---drawerPaper-10 > div > div a:hover{
+.WithTheme-WithWidth-Sidebar---drawerPaper-10 > div > div a{
+  color:#646777 !important;border-bottom: 1px solid #eff1f5 !important;}
+
+/* .WithTheme-WithWidth-Sidebar---drawerPaper-10 > div > div a:hover{
   background: linear-gradient(to right, #FF5722, #FBCA00) !important;
+  background-color: #FBCA00 !important;
+  background-color: #f2f4f7 !important;
   color: #0F263A !important;
   font-weight: bold;
-}
+} */
+
 .WithTheme-WithWidth-Sidebar---drawerPaper-10{
   margin-top: 0px !important;
   padding-right: 25px !important;
   padding: 0px !important;
 }
+
 .Layout-contentWithSidebar-3 .WithTheme-WithWidth-Sidebar---drawerPaper-10{
   padding: 0px !important;
 }
+
 .Layout-appFrame-2 .headroom-wrapper .headroom header{
-  background-color: #0F263A !important;
+  background-color: #fff !important;
 }
+
 .Menu-root-131{
 padding-top: 0px !important;
 }
-.WithTheme-WithWidth-Sidebar---drawerPaper-10 svg[class^="MuiSvgIcon"]{
+
+/* .WithTheme-WithWidth-Sidebar---drawerPaper-10 svg[class^="MuiSvgIcon"]{
   fill: #fff !important;
-}
-.panel{
+} */
+
+/* .panel{
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2) !important;
-}
+} */
+
 table tbody td{
 	color: #0F263A !important;
 }
 .datagrid-body tr:hover{
-background: linear-gradient(to right, #FF5722, #FBCA00) !important;
+/* background: linear-gradient(to right, #FF5722, #FBCA00) !important; */
+/* background-color: #FBCA00 !important; */
+background-color: #f2f4f7 !important;
 }
 .datagrid-body tr:hover svg[class^="MuiSvgIcon"]{
+  fill: #fff !important;
+}
+.MenuItemLink-icon-138 svg[class^="MuiSvgIcon"] {
+  fill: #0F263A !important;
+}
+.MuiButtonBase-root-66 svg[class^="MuiSvgIcon"] {
+  fill: #b1c3c8 !important;
+}
+.MuiIconButton-label-65 svg[class^="MuiSvgIcon"] {
   fill: #fff !important;
 }
 .datagrid-body tr .MuiButton-textPrimary-167:hover{
 	background:#ff572287 !important;
 }
-.list-page{
+/* .list-page{
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2) !important;
-}
-.show-page{
+} */
+/* .show-page{
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2) !important;
-}
+} */
 #react-admin-title span{
-	color:#fff !important;
+	color:#646777 !important;
 }
-.show-page a{border-bottom: 2px solid !important;}
-.show-page a:active{
+.show-page a{border-bottom: 2px solid #f2f4f7 !important;}
+/* .show-page a:active{
 	border-bottom: none !important;
-	border-left: 2px solid !important;
-	border-right: 2px solid !important;
-  border-top: 2px solid !important;
+	border-left: 2px solid #f2f4f7 !important;
+	border-right: 2px solid #f2f4f7 !important;
+  border-top: 2px solid #f2f4f7 !important;
   background: linear-gradient(to right, #FF5722, #FBCA00) !important;
-}
-.show-page a:focus{
+  background-color: #f2f4f7 !important;
+} */
+/* .show-page a:focus{
 	border-bottom: none !important;
-	border-left: 2px solid !important;
-	border-right: 2px solid !important;
-  border-top: 2px solid !important;
+	border-left: 2px solid #f2f4f7 !important;
+	border-right: 2px solid #f2f4f7 !important;
+  border-top: 2px solid #f2f4f7 !important;
   background: linear-gradient(to right, #FF5722, #FBCA00) !important;
-}
-.show-page > div > div > div > div > div > span {
+  background-color: #f2f4f7 !important;
+} */
+/* .show-page > div > div > div > div > div > span {
   background:#fff !important;
   display: none !important;
-}
+} */
 .WithTheme-WithWidth-Sidebar---drawerPaper-10 > div > div > div > ul:hover{
-  background: linear-gradient(to right, #FF5722, #FBCA00) !important;
+  /* background: linear-gradient(to right, #FF5722, #FBCA00) !important; */
+  /* background-color: #FBCA00 !important; */
+  background-color: #f2f4f7 !important;
 }
 .WithTheme-WithWidth-Sidebar---drawerPaper-10 > div > div > div > ul h3{
-color:#fff !important;
-font-weight: 600;
+color: #646777 !important;
+font-size: 0.9rem;
 }
-.WithTheme-WithWidth-Sidebar---drawerPaper-10 > div > div > div > ul:hover h3{
+/* .WithTheme-WithWidth-Sidebar---drawerPaper-10 > div > div > div > ul:hover h3{
   color: #0F263A !important;
   font-weight: 600;
+} */
+.MuiIconButton-label-65 svg[class^="MuiSvgIcon"] {
+  fill: #b1c3c8 !important;
+}
+.card {
+  border: none !important;
 }
 
+.badge-success {
+  color: #fff;
+  background-color: #4ce1b6 !important;
+}
 
+.badge-danger {
+    color: #fff;
+    background-color: #ff4861 !important;
+}
 
+.badge-warning {
+  color: #fff;
+  background-color: #f6da6e !important;
+}
 
+.badge-primary {
+  color: #fff;
+  background-color: #70bbfd !important;
+}
 
+.table .badge {
+  color: #fff !important;
+  padding: 6px 20px !important;
+  border-radius: 15px !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+}
 
+.MuiInput-input-65 {
+  padding: 6px 36px 8px !important;
+}
+
+.Login-main-1 {    
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}

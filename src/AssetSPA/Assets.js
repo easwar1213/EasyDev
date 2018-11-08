@@ -6,86 +6,27 @@ import Map from './map';
 import SensorGroupTable from './SensorGroupTable';
 import Table from '../components/table/Table';
 import Panel from '../components/Panel';
-
+import AssetDetails from './AssetDetails';
 
 export const AssetList = (props) => (
-    <List title="Assets" {...props} filters={<AssetFilter />}  >
-        <Datagrid>
-            <TextField source="telematicsSerialNumber" />
-            <TextField source="make" />
-            <TextField source="assetName" />
-            <TextField source="model" />
-            <TextField source="distributorName" />
-            <ShowButton />
-        </Datagrid>   
-    </List>
- 
-    // <Panel lg={12} title="Device Status">
-        
-    //     <Table responsive className='table--bordered'>
-    //       <thead>
-    //       <tr>            
-    //         <th>Telematics Serial#</th>
-    //         <th>Make</th>
-    //         <th>Asset Name</th>
-    //         <th>Model</th>
-    //         <th>Distributor Name</th>            
-    //         <th>Asset Details</th>            
-    //       </tr>
-    //       </thead>
-    //       <tbody>
-    //       <tr>
-    //         <td>1141233567</td>
-    //         <td>Compressor</td>
-    //         <td>LS 110</td>
-    //         <td>Asset 3</td>
-    //         <td>Distributor1</td>
-    //         <td>Show</td>           
-    //       </tr>
-    //       <tr>
-    //         <td>1212343457</td>
-    //         <td>Compressor</td>
-    //         <td>LS 90</td>
-    //         <td>Asset 1</td>
-    //         <td>Distributor2</td>
-    //         <td>Show</td>                        
-    //       </tr>
-    //       <tr>
-    //         <td>1212343458</td>
-    //         <td>Compressor</td>
-    //         <td>LS 110</td>
-    //         <td>Asset 1</td>
-    //         <td>Distributor2</td>
-    //         <td>Show</td>                       
-    //       </tr>
-    //       <tr>
-    //         <td>1212123434</td>
-    //         <td>Compressor</td>
-    //         <td>LS 110</td>
-    //         <td>Asset 2</td>
-    //         <td>Distributor 3</td>
-    //         <td>Show</td>                           
-    //       </tr>
-    //       <tr>
-    //         <td>1121234345</td>
-    //         <td>Compressor</td>
-    //         <td>LS 110</td>
-    //         <td>Asset 2</td>
-    //         <td>Distributor 3</td>
-    //         <td>Show</td>                          
-    //       </tr>
-    //       <tr>
-    //         <td>1231212343</td>
-    //         <td>Compressor</td>
-    //         <td>LS 110</td>
-    //         <td>Asset 3</td>
-    //         <td>Distributor1</td>
-    //         <td>Show</td>                      
-    //       </tr>
-    //       </tbody>
-    //     </Table>
-    //   </Panel>
-    
+
+    <Container id="deviceContainer">
+        <Row>
+            {/* <AssetDetails /> */}
+            <Panel xs={12} md={12} lg={12} title="Asset Details">
+                <List title="Assets" {...props} filters={<AssetFilter />}  >
+                    <Datagrid>
+                        <TextField source="telematicsSerialNumber" />
+                        <TextField source="make" />
+                        <TextField source="assetName" />
+                        <TextField source="model" />
+                        <TextField source="distributorName" />
+                        <ShowButton />
+                    </Datagrid>
+                </List>
+            </Panel>
+        </Row>
+    </Container>
 );
 
 const AssetTitle = ({ record }) => {
@@ -105,7 +46,7 @@ export const showAsset = (props) => (
                 <SensorGroupTable />
             </Tab>
 
-            
+
             <Tab label="Details">
                 {/* <Row>
                     <Col xs={12} sm={6}>
@@ -138,25 +79,25 @@ export const showAsset = (props) => (
                 </Row> */}
 
 
-                        <TextField label="Name" source="assetName" />
-                     
-                        <TextField label="Model" source="model" />
-                   
-                        <TextField label="Make" source="make" />
-                     
-                        <TextField label="Model Year" source="modelYear" />
-                      
-                        <TextField label="Compressor Controller" source="compressorController" />
-                      
-                        <TextField label="Compressor Type" source="compressorType" />
-                   
-                        <TextField label="Distributor Name" source="distributorName" />
-                  
-                        <TextField label="Motor HP" source="motorHP" />
-                   
-                        <TextField label="Nominal Package FlowRating" source="nominalPackageFlowRating" />
-                    
-                
+                <TextField label="Name" source="assetName" />
+
+                <TextField label="Model" source="model" />
+
+                <TextField label="Make" source="make" />
+
+                <TextField label="Model Year" source="modelYear" />
+
+                <TextField label="Compressor Controller" source="compressorController" />
+
+                <TextField label="Compressor Type" source="compressorType" />
+
+                <TextField label="Distributor Name" source="distributorName" />
+
+                <TextField label="Motor HP" source="motorHP" />
+
+                <TextField label="Nominal Package FlowRating" source="nominalPackageFlowRating" />
+
+
 
             </Tab>
 
