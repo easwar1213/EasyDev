@@ -118,13 +118,19 @@ div[class^="MuiDrawer"] div[class^="MuiPaper"]{
 
   min-height: calc(100vh - 60px) !important;
 } 
+.layout div[class^="MuiDrawer"]{
+  overflow:hidden;
+}
+/* .layout div[class^="MuiDrawer"] > div > div{ position:fixed; width:240px;} */
 
 .show-page span[class^="MuiTab"], .show-page a{
   font-weight: bold;
   text-decoration:none !important;
   font-size:14px;
-}
+} 
+label[class^="MuiFormLabel"] > span{ font-size:22px !important; color:#000000 !important; font-weight:bold; }
 .show-page div[class^="MuiFormControl"]{ width:100%; display:block;}
+form div[class^="MuiFormControl"]{ width:auto !important; display:inline-block !important;}
 .show-page div[class^="MuiFormControl"] div[class^="Labeled"]{ padding:0 !important;}
 .show-page div[class^="MuiFormLabel"] { font-size: 1.2rem !important; color: rgba(0, 0, 0, 0.9);}
 
@@ -133,7 +139,7 @@ div[class^="MuiDrawer"] div[class^="MuiPaper"]{
 .list-page span[class^="MuiButton"]{ color:#000000;}
 .list-page span[class^="MuiButton"] span{ text-transform:capitalize !important; font-weight: 600; }
 
-.layout, div[class^="Layout"] { max-width:100% !important;overflow:auto; min-width:auto !important;}
+.layout, div[class^="Layout"] { max-width:100% !important;   min-width:auto !important;}
 
 .card-body .panel__btns{
   position:absolute;
