@@ -214,6 +214,100 @@ div[class^="MuiDrawer"] div[class^="MuiPaper"] {
     padding:0px;
   }
 }
+/* gokul */
+
+.WithTheme-WithWidth-Sidebar---drawerPaper-10 > div{
+  border-radius:0px !important;
+  background: #0F263A;
+}
+.WithTheme-WithWidth-Sidebar---drawerPaper-10 > div > div{
+  background: #0F263A !important;
+  width: 100% !important;
+}
+.Menu-root-131{width: 100% !important;}
+.MuiDrawer-docked-120 .WithTheme-WithWidth-Sidebar---drawerPaper-10{
+  padding-right: 20px !important;
+}
+.WithTheme-WithWidth-Sidebar---drawerPaper-10 > div > div a{color:#fff !important;border-bottom: 1px solid #FBCA00 !important; font-weight: 600 !important;}
+.WithTheme-WithWidth-Sidebar---drawerPaper-10 > div > div a:hover{
+  background: linear-gradient(to right, #FF5722, #FBCA00) !important;
+  color: #0F263A !important;
+  font-weight: bold;
+}
+.WithTheme-WithWidth-Sidebar---drawerPaper-10{
+  margin-top: 0px !important;
+  padding-right: 25px !important;
+  padding: 0px !important;
+}
+.Layout-contentWithSidebar-3 .WithTheme-WithWidth-Sidebar---drawerPaper-10{
+  padding: 0px !important;
+}
+.Layout-appFrame-2 .headroom-wrapper .headroom header{
+  background-color: #0F263A !important;
+}
+.Menu-root-131{
+padding-top: 0px !important;
+}
+.WithTheme-WithWidth-Sidebar---drawerPaper-10 svg[class^="MuiSvgIcon"]{
+  fill: #fff !important;
+}
+.panel{
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2) !important;
+}
+table tbody td{
+	color: #0F263A !important;
+}
+.datagrid-body tr:hover{
+background: linear-gradient(to right, #FF5722, #FBCA00) !important;
+}
+.datagrid-body tr:hover svg[class^="MuiSvgIcon"]{
+  fill: #fff !important;
+}
+.datagrid-body tr .MuiButton-textPrimary-167:hover{
+	background:#ff572287 !important;
+}
+.list-page{
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2) !important;
+}
+.show-page{
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2) !important;
+}
+#react-admin-title span{
+	color:#fff !important;
+}
+.show-page a{border-bottom: 2px solid !important;}
+.show-page a:active{
+	border-bottom: none !important;
+	border-left: 2px solid !important;
+	border-right: 2px solid !important;
+  border-top: 2px solid !important;
+  background: linear-gradient(to right, #FF5722, #FBCA00) !important;
+}
+.show-page a:focus{
+	border-bottom: none !important;
+	border-left: 2px solid !important;
+	border-right: 2px solid !important;
+  border-top: 2px solid !important;
+  background: linear-gradient(to right, #FF5722, #FBCA00) !important;
+}
+.show-page > div > div > div > div > div > span {
+  background:#fff !important;
+  display: none !important;
+}
+.WithTheme-WithWidth-Sidebar---drawerPaper-10 > div > div > div > ul:hover{
+  background: linear-gradient(to right, #FF5722, #FBCA00) !important;
+}
+.WithTheme-WithWidth-Sidebar---drawerPaper-10 > div > div > div > ul h3{
+color:#fff !important;
+font-weight: 600;
+}
+.WithTheme-WithWidth-Sidebar---drawerPaper-10 > div > div > div > ul:hover h3{
+  color: #0F263A !important;
+  font-weight: 600;
+}
+
+
+
 
 
 
