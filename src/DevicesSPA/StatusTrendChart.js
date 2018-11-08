@@ -1,7 +1,7 @@
 
 import React, { PureComponent } from 'react';
 import { ComposedChart, LineChart, Bar, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Brush } from 'recharts';
-
+import Panel from '../components/Panel';
 
 const data1 = [
     { name: '17-Oct', Unavailable: 14, Available: 9},
@@ -19,7 +19,7 @@ class StatusTrendChart extends PureComponent {
     render() {
 
         return (
-
+        <Panel lg={12} title="Device Status">
             <LineChart width={750} height={298} data={data1}
                 margin={{ top: 20, right: 20, left: 30, bottom: 5 }}>
                 <XAxis dataKey="name" />
@@ -31,6 +31,7 @@ class StatusTrendChart extends PureComponent {
                 <Line type="monotone" dataKey="Available" stroke="#81C784" />
                 <Brush />
             </LineChart>
+        </Panel>
         );
     }
 }

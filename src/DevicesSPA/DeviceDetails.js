@@ -8,7 +8,7 @@ class DeviceDetails extends PureComponent {
     const {t} = this.props;
 
     return (
-      <Panel lg={12} title="Device Status">
+      <Panel xs={12} md={12} lg={12} color='warning' title="Device Status">
         <Table responsive className='table--bordered'>
           <thead>
           <tr>            

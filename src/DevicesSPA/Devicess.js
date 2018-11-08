@@ -15,14 +15,8 @@ import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import StatusStatisticsContainer from './StatusStatisticsContainer';
 import StatusTrendContainer from './StatusTrendContainer';
-import StatusTrendChart from './StatusTrendChart';
 import DeviceDetailsIndex from './DeviceDetailsIndex';
-import DeviceDetails from './DeviceDetails';
-import DynamiclyRefreshedDoughnut from './DynamiclyRefreshedDoughnut';
-import RandomAnimatedLine from './RandomAnimatedLine';
-import ShowDeviceTab from './ShowDeviceTab';
-import { Col, Container, Row } from 'reactstrap';
-import Panel from '../components/Panel';
+import {Col, Container, Row} from 'reactstrap';
 
 const styles = theme => ({
     root: {
@@ -42,49 +36,34 @@ const gridStyle = {
 
 
 export const DeviceList = (props) => (
-    <Container>
-        {/* <Row>
-            <Col md={12}>
-                <h3 className='page-title'>Device</h3>
+    <div className='dashboard dashboardContainer noPadd'>
+        <Row>   
+            <Col xs={12} sm={12} md={5}>
+                <StatusStatisticsContainer/>  
             </Col>
-        </Row> */}
-        <Row>
-            <DynamiclyRefreshedDoughnut />
-            <RandomAnimatedLine />
+            <Col xs={12} sm={12} md={7}>
+                <StatusTrendContainer/>
+            </Col>
+            <Col xs={12} className="deviceTable">
+                <Paper elevation={11}>
+                    <List title="Devices" {...props} perPage={5} sort={{ field: 'telematicsSerialNumber', order: 'DESC' }} >
+                        <DeviceGrid />
+                        {/* <Datagrid>
+                            <TextField label="Status" source="avaiabilityStatus" />
+                            <TextField label="Serial#" source="telematicsSerialNumber" />
+                            <TextField label="Device" source="model" />
+                            <TextField label="Asset" source="assetName" />
+                            <TextField label="Last Comm." source="lastCommunicated" />
+                        <ShowButton />
+                        </Datagrid> */}
+                    </List>
+                </Paper>
+            </Col>
         </Row>
-        <br />
-        <Row>
-            <DeviceDetails />
-            {/* <Panel xs={12} md={12} lg={12} title="Device Status Details">
-                   <List title="Devices" {...props} perPage={5} sort={{ field: 'telematicsSerialNumber', order: 'DESC' }} >
-                         <DeviceGrid />                        
-                     </List>
-             </Panel> */}
-        </Row>
-    </Container>
-
-    // <div className='dashboard dashboardContainer noPadd'>
-    //     <Row>
-    //         <Col xs={12} sm={12} md={6}>
-    //             <DynamiclyRefreshedDoughnut />
-    //         </Col>
-    //         <Col xs={12} sm={12} md={6}>
-    //             <RandomAnimatedLine />
-    //         </Col>
-    //     </Row>
-    //     <br/>
-    //     <Row>
-    //         <Col xs={12} sm={12} md={12}>
-    //         <DeviceDetails/>
-    //         {/* <Panel lg={12} title="Device Status Details">
-    //                 <List title="Devices" {...props} perPage={5} sort={{ field: 'telematicsSerialNumber', order: 'DESC' }} >
-    //                     <DeviceGrid />                        
-    //                 </List>
-    //             </Panel> */}
-    //         </Col>            
-    //     </Row>
-    // </div>
+      </div>   
 );
+
+
 
 
 const DeviceGrid = ({ ids, data, basePath }) => (
@@ -149,12 +128,12 @@ const DeviceGrid = ({ ids, data, basePath }) => (
                             <TableCell>{(data[id]).assetName}</TableCell>
 
                             {(data[id]).lastCommunicated === 'unvailable' && (
-                                <TableCell>{"unavaiable"}</TableCell>
-                            )}
+                                 <TableCell>{"unavaiable"}</TableCell>
+                            )}  
 
                             {(data[id]).lastCommunicated != 'unvailable' && (
-                                <TableCell>{new Date().toISOString()}</TableCell>
-                            )}
+                                  <TableCell>{new Date().toISOString()}</TableCell>
+                            )}    
 
                             {/* <TableCell>{new Date().toISOString()}</TableCell> */}
                             <TableCell>
@@ -165,6 +144,11 @@ const DeviceGrid = ({ ids, data, basePath }) => (
                             {/* {(data[id]).partStatus == "Unauthorized" && (
                                 <TableCell style={{ backgroundColor: "red" }} >{(data[id]).partStatus}</TableCell>
                             )} */}
+
+
+
+
+
 
                             {/* <TableCell >{row.sensorCount}</TableCell>
                             <TableCell >{row.description}</TableCell>
@@ -197,30 +181,29 @@ const DeviceTitle = ({ record }) => {
     return <span>Device / {record ? `${record.telematicsSerialNumber}` : ''}</span>;
 };
 export const showDevice = (props) => (
-    <ShowDeviceTab/>
-    // <Show title={<DeviceTitle />} {...props}  >
 
-        
-    //     {/* <TabbedShowLayout>
-    //         <Tab label="Device Details">
-    //             <TextField label="Telematics Serial Number" source="telematicsSerialNumber" />
-    //             <TextField label="Device Model" source="model" />
-    //             <TextField label="Activation Date" source="activatedDate" />
-    //             <TextField label="Last Communication" source="lastCommunicated" />
-    //         </Tab>
+    <Show title={<DeviceTitle />} {...props}  >
 
-    //         <Tab label="Asset Details">
-    //             <TextField label="Name" source="assetName" />
-    //             <TextField label="Model" source="model" />
-    //             <TextField label="Make" source="make" />
-    //             <TextField label="Model Year" source="modelYear" />
-    //             <TextField label="Compressor Controller" source="compressorController" />
-    //             <TextField label="Compressor Type" source="compressorType" />
-    //             <TextField label="Distributor Name" source="distributorName" />
-    //             <TextField label="Motor HP" source="motorHP" />
-    //             <TextField label="Nominal Package FlowRating" source="nominalPackageFlowRating" />
-    //         </Tab>
-    //     </TabbedShowLayout> */}
+        <TabbedShowLayout>
+            <Tab label="Device Details">
+                <TextField label="Telematics Serial Number" source="telematicsSerialNumber" />
+                <TextField label="Device Model" source="model" />
+                <TextField label="Activation Date" source="activatedDate" />
+                <TextField label="Last Communication" source="lastCommunicated" />
+            </Tab>
 
-    // </Show>
+            <Tab label="Asset Details">
+                <TextField label="Name" source="assetName" />
+                <TextField label="Model" source="model" />
+                <TextField label="Make" source="make" />
+                <TextField label="Model Year" source="modelYear" />
+                <TextField label="Compressor Controller" source="compressorController" />
+                <TextField label="Compressor Type" source="compressorType" />
+                <TextField label="Distributor Name" source="distributorName" />
+                <TextField label="Motor HP" source="motorHP" />
+                <TextField label="Nominal Package FlowRating" source="nominalPackageFlowRating" />
+            </Tab>
+        </TabbedShowLayout>
+
+    </Show>
 );
