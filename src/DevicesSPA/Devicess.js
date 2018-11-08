@@ -38,10 +38,10 @@ const gridStyle = {
 export const DeviceList = (props) => (
     <div className='dashboard dashboardContainer noPadd'>
         <Row>   
-            <Col xs={12} sm={12} md={5}>
+            <Col xs={12} sm={12} md={5} id="statusDistribution">
                 <StatusStatisticsContainer/>  
             </Col>
-            <Col xs={12} sm={12} md={7}>
+            <Col xs={12} sm={12} md={7} id="sttusTrend">
                 <StatusTrendContainer/>
             </Col>
             <Col xs={12} className="deviceTable">

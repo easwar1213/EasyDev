@@ -1,7 +1,7 @@
 import React from 'react';
 //import { List, Datagrid, TextField,EmailField, ReferenceField } from 'react-admin';
 import { BooleanInput, SimpleShowLayout, SimpleList, ReferenceManyField, ReferenceArrayField, SelectArrayInput, Show, ShowButton, Tab, TabbedShowLayout, Filter, List, Edit, Create, Datagrid, ReferenceField, TextField, EditButton, DisabledInput, LongTextInput, ReferenceInput, SelectInput, SimpleForm, TextInput } from 'react-admin';
-
+import { Col, Container, Row } from 'reactstrap';
 import Map from './map';
 import SensorGroupTable from './SensorGroupTable';
 import Table from '../components/table/Table';
@@ -105,16 +105,59 @@ export const showAsset = (props) => (
                 <SensorGroupTable />
             </Tab>
 
+            
             <Tab label="Details">
-                <TextField label="Name" source="assetName" />
-                <TextField label="Model" source="model" />
-                <TextField label="Make" source="make" />
-                <TextField label="Model Year" source="modelYear" />
-                <TextField label="Compressor Controller" source="compressorController" />
-                <TextField label="Compressor Type" source="compressorType" />
-                <TextField label="Distributor Name" source="distributorName" />
-                <TextField label="Motor HP" source="motorHP" />
-                <TextField label="Nominal Package FlowRating" source="nominalPackageFlowRating" />
+                {/* <Row>
+                    <Col xs={12} sm={6}>
+                        <TextField label="Name" source="assetName" />
+                    </Col>
+                    <Col xs={12} sm={6}>
+                        <TextField label="Model" source="model" />
+                    </Col>
+                    <Col xs={12} sm={6}>
+                        <TextField label="Make" source="make" />
+                    </Col>
+                    <Col xs={12} sm={6}>    
+                        <TextField label="Model Year" source="modelYear" />
+                    </Col>
+                    <Col xs={12} sm={6}>    
+                        <TextField label="Compressor Controller" source="compressorController" />
+                    </Col>
+                    <Col xs={12} sm={6}>    
+                        <TextField label="Compressor Type" source="compressorType" />
+                    </Col>
+                    <Col xs={12} sm={6}>
+                        <TextField label="Distributor Name" source="distributorName" />
+                    </Col>
+                    <Col xs={12} sm={6}>
+                        <TextField label="Motor HP" source="motorHP" />
+                    </Col>
+                    <Col xs={12} sm={6}>
+                        <TextField label="Nominal Package FlowRating" source="nominalPackageFlowRating" />
+                    </Col>
+                </Row> */}
+
+
+                        <TextField label="Name" source="assetName" />
+                     
+                        <TextField label="Model" source="model" />
+                   
+                        <TextField label="Make" source="make" />
+                     
+                        <TextField label="Model Year" source="modelYear" />
+                      
+                        <TextField label="Compressor Controller" source="compressorController" />
+                      
+                        <TextField label="Compressor Type" source="compressorType" />
+                   
+                        <TextField label="Distributor Name" source="distributorName" />
+                  
+                        <TextField label="Motor HP" source="motorHP" />
+                   
+                        <TextField label="Nominal Package FlowRating" source="nominalPackageFlowRating" />
+                    
+                
+
             </Tab>
 
             <Tab label="Alerts" filters={<AlertFilter />}>

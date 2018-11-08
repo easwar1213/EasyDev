@@ -173,6 +173,17 @@ form div[class^="MuiFormControl"]{ width:auto !important; display:inline-block !
   color: #646777;
   font-size: 14px;
 }
+button, * {
+  outline: none !important; 
+}
+@media screen and (max-width: 991px) {
+    .layout .panel{margin-top:20px;}
+}
+@media (min-width: 1200px){
+  .container {
+    max-width: 100% !important;
+  }
+}
 
 
 
