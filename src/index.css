@@ -121,6 +121,8 @@ div[class^="MuiDrawer"] div[class^="MuiPaper"]{
 } 
 .layout div[class^="MuiDrawer"]{
   overflow:hidden;
+  box-shadow:0 1px 30px 1px rgba(0,0,0,.11);
+  background-color:#FFFFFF;
 }
 /* .layout div[class^="MuiDrawer"] > div > div{ position:fixed; width:240px;} */
 
