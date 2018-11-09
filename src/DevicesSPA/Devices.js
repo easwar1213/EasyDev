@@ -51,15 +51,14 @@ export const DeviceList = (props) => (
         <Row>
             <DynamiclyRefreshedDoughnut />
             <RandomAnimatedLine />
-        </Row>
-        
+        </Row>        
         <Row>
-            <DeviceDetails />
-            {/* <Panel xs={12} md={12} lg={12} title="Device Status Details">
+            {/* <DeviceDetails /> */}
+            <Panel xs={12} md={12} lg={12} title="Device Status Details">
                    <List title="Devices" {...props} perPage={5} sort={{ field: 'telematicsSerialNumber', order: 'DESC' }} >
                          <DeviceGrid />                        
                      </List>
-             </Panel> */}
+             </Panel>
         </Row>
     </Container>
 
@@ -197,30 +196,27 @@ const DeviceTitle = ({ record }) => {
     return <span>Device / {record ? `${record.telematicsSerialNumber}` : ''}</span>;
 };
 export const showDevice = (props) => (
-    <ShowDeviceTab/>
-    // <Show title={<DeviceTitle />} {...props}  >
+    // <ShowDeviceTab/>
+    <Show title={<DeviceTitle />} {...props}  >        
+        <TabbedShowLayout>
+            <Tab label="Device Details">
+                <TextField label="Telematics Serial Number" source="telematicsSerialNumber" />
+                <TextField label="Device Model" source="model" />
+                <TextField label="Activation Date" source="activatedDate" />
+                <TextField label="Last Communication" source="lastCommunicated" />
+            </Tab>
 
-        
-    //     {/* <TabbedShowLayout>
-    //         <Tab label="Device Details">
-    //             <TextField label="Telematics Serial Number" source="telematicsSerialNumber" />
-    //             <TextField label="Device Model" source="model" />
-    //             <TextField label="Activation Date" source="activatedDate" />
-    //             <TextField label="Last Communication" source="lastCommunicated" />
-    //         </Tab>
-
-    //         <Tab label="Asset Details">
-    //             <TextField label="Name" source="assetName" />
-    //             <TextField label="Model" source="model" />
-    //             <TextField label="Make" source="make" />
-    //             <TextField label="Model Year" source="modelYear" />
-    //             <TextField label="Compressor Controller" source="compressorController" />
-    //             <TextField label="Compressor Type" source="compressorType" />
-    //             <TextField label="Distributor Name" source="distributorName" />
-    //             <TextField label="Motor HP" source="motorHP" />
-    //             <TextField label="Nominal Package FlowRating" source="nominalPackageFlowRating" />
-    //         </Tab>
-    //     </TabbedShowLayout> */}
-
-    // </Show>
+            <Tab label="Asset Details">
+                <TextField label="Name" source="assetName" />
+                <TextField label="Model" source="model" />
+                <TextField label="Make" source="make" />
+                <TextField label="Model Year" source="modelYear" />
+                <TextField label="Compressor Controller" source="compressorController" />
+                <TextField label="Compressor Type" source="compressorType" />
+                <TextField label="Distributor Name" source="distributorName" />
+                <TextField label="Motor HP" source="motorHP" />
+                <TextField label="Nominal Package FlowRating" source="nominalPackageFlowRating" />
+            </Tab>
+        </TabbedShowLayout>
+    </Show>
 );

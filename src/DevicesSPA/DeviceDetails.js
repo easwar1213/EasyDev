@@ -8,65 +8,65 @@ class DeviceDetails extends PureComponent {
     const {t} = this.props;
 
     return (
-      <Panel xs={12} md={12} lg={12} color='warning' title="Device Status">
-        <Table responsive className='table--bordered'>
+      <Panel xs={12} md={12} lg={12} title="Device Status">
+         <Table responsive className='table--bordered'>
           <thead>
-          <tr>            
-            <th>Telematics Serial#</th>
-            <th>Make</th>
+          <tr>
+            <th>Status</th>
+            <th>Serial#</th>
+            <th>Device Name</th>
             <th>Asset Name</th>
-            <th>Model</th>
-            <th>Distributor Name</th>            
-            <th>Asset Details</th>            
+            <th>Last Comm.</th>
+            <th>Device Details</th>            
           </tr>
           </thead>
           <tbody>
           <tr>
+            <td><Badge color='success'>Available</Badge></td>
             <td>1141233567</td>
-            <td>Compressor</td>
             <td>LS 110</td>
             <td>Asset 3</td>
-            <td>Distributor1</td>
+            <td>2018/10/31</td>
             <td>Show</td>           
           </tr>
           <tr>
+            <td><Badge color='success'>Available</Badge></td>
             <td>1212343457</td>
-            <td>Compressor</td>
             <td>LS 90</td>
             <td>Asset 1</td>
-            <td>Distributor2</td>
+            <td>2018/10/31</td>
             <td>Show</td>                        
           </tr>
           <tr>
+            <td><Badge color='success'>Available</Badge></td>
             <td>1212343458</td>
-            <td>Compressor</td>
             <td>LS 110</td>
             <td>Asset 1</td>
-            <td>Distributor2</td>
+            <td>2018/10/31</td>
             <td>Show</td>                       
           </tr>
           <tr>
+            <td><Badge color='success'>Available</Badge></td>
             <td>1212123434</td>
-            <td>Compressor</td>
             <td>LS 110</td>
             <td>Asset 2</td>
-            <td>Distributor 3</td>
+            <td>2018/10/31</td>
             <td>Show</td>                           
           </tr>
           <tr>
+            <td><Badge color='danger'>Unavailable</Badge></td>
             <td>1121234345</td>
-            <td>Compressor</td>
             <td>LS 110</td>
             <td>Asset 2</td>
-            <td>Distributor 3</td>
+            <td>2018/10/31</td>
             <td>Show</td>                          
           </tr>
           <tr>
+            <td><Badge color='danger'>Unavailable</Badge></td>
             <td>1231212343</td>
-            <td>Compressor</td>
             <td>LS 110</td>
             <td>Asset 3</td>
-            <td>Distributor1</td>
+            <td>2018/10/31</td>
             <td>Show</td>                      
           </tr>
           </tbody>

@@ -9,18 +9,18 @@ function getRandomInt(min, max) {
 
 const getState = () => ({
   labels: [
-    '% Unavailable',
-    '% Avaiable',
+    '% Available',
+    '% UnAvaiable',
   ],
   datasets: [{
     data: [getRandomInt(0, 100), getRandomInt(0, 100)],
     backgroundColor: [
-      '#81C784',
-      '#D81B60',
+      '#4ce1b6',
+      '#ff4861',
     ],
     hoverBackgroundColor: [
-      '#81C784',
-      '#D81B60',
+      '#4ce1b6',
+      '#ff4861',
     ],
     borderColor: 'rgba(255,255,255,0.54)'
   }]
@@ -45,8 +45,8 @@ class DynamiclyRefreshedDoughnut extends PureComponent {
     const { t } = this.props;
 
     return (      
-      <Panel xs={12} md={12} lg={6} title="Device Status Distribution">
-        <Doughnut data={this.state.data} />
+      <Panel xs={12} md={12} lg={6} title="Device Status Distribution">      
+        <Doughnut data={this.state.data} />        
       </Panel>
     )
   }
