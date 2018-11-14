@@ -496,3 +496,7 @@ font-size: 0.9rem;
 .list-group-item-action {
   font-size: 14px !important;
 }
+
+.Datagrid-rowCell-79:last-child {
+  padding: 0px !important;
+}

@@ -33,7 +33,7 @@ export const AssetList = (props) => (
                         <TextField source="assetName" />
                         <TextField source="model" />
                         <TextField source="distributorName" />
-                        <ShowButton />
+                        <ShowButton label="Show" />
                     </Datagrid>
                 </List>
             </Panel>
@@ -107,7 +107,7 @@ const AssetAlertsTab = ({ record }) => {
             <th>Time Active</th>
             <th>Alert Priority</th>
             <th>Alert Status</th>
-            <th>Event</th>            
+            <th>Event</th>                     
           </tr>
           </thead>
           <tbody>
