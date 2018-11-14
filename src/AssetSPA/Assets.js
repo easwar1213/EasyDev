@@ -1,16 +1,28 @@
 import React from 'react';
 //import { List, Datagrid, TextField,EmailField, ReferenceField } from 'react-admin';
-import { BooleanInput, SimpleShowLayout, SimpleList, ReferenceManyField, ReferenceArrayField, SelectArrayInput, Show, ShowButton, Tab, TabbedShowLayout, Filter, List, Edit, Create, Datagrid, ReferenceField, TextField, EditButton, DisabledInput, LongTextInput, ReferenceInput, SelectInput, SimpleForm, TextInput } from 'react-admin';
+import { Responsive, BooleanInput, SimpleShowLayout, SimpleList, ReferenceManyField, ReferenceArrayField, SelectArrayInput, Show, ShowButton, Tab, TabbedShowLayout, Filter, List, Edit, Create, Datagrid, ReferenceField, TextField, EditButton, DisabledInput, LongTextInput, ReferenceInput, SelectInput, SimpleForm, TextInput } from 'react-admin';
 import { Col, Container, Row } from 'reactstrap';
 import Map from './map';
 import SensorGroupTable from './SensorGroupTable';
 import Table from '../components/table/Table';
 import Panel from '../components/Panel';
 import AssetDetails from './AssetDetails';
+import { Card, CardBody } from 'reactstrap';
+import Collapse from '../components/Collapse';
+import {Badge} from 'reactstrap';
+import '../index.css';
 
 export const AssetList = (props) => (
 
     <Container id="deviceContainer">
+        <Row>
+            <Col md={12}>
+                <h3 className='page-title'>Assets</h3>
+            </Col>
+        </Row>
+        <Row>
+            <br />
+        </Row>
         <Row>
             {/* <AssetDetails /> */}
             <Panel xs={12} md={12} lg={12} title="Asset Details">
@@ -33,9 +45,129 @@ const AssetTitle = ({ record }) => {
     return <span>Assets / {record ? `${record.telematicsSerialNumber}` : ''}</span>;
 };
 
+const AssetDetailsTab = ({ record }) => {
+    return (
+        <div>
+        {/* <Panel xs={12} md={12} lg={12} title="Device Status Distribution">  */}
+        {/* <Card>
+            <CardBody>  */}
+                {/* <Collapse className="with-shadow" title="Asset Details "> */}
+                    <div class="card">
+                        <div class="card-body">
+                            <table width="100%">
+                                <tr width="100%">
+                                    <td width="50%">
+                                        <ul class="list-group">
+                                            <button class="active list-group-item-action list-group-item">Field Name</button>
+                                            <button class="list-group-item-action list-group-item"><strong>Name</strong></button>
+                                            <button class="list-group-item-action list-group-item"><strong>Model</strong></button>
+                                            <button class="list-group-item-action list-group-item"><strong>Make</strong></button>
+                                            <button class="disabled list-group-item-action list-group-item"><strong>Model Year</strong></button>
+                                            <button class="list-group-item-action list-group-item"><strong>Compressor Controller</strong></button>
+                                            <button class="list-group-item-action list-group-item"><strong>Compressor Type</strong></button>
+                                            <button class="list-group-item-action list-group-item"><strong>Distributor Name</strong></button>
+                                            <button class="disabled list-group-item-action list-group-item"><strong>Motor HP</strong></button>
+                                            <button class="disabled list-group-item-action list-group-item"><strong>Nominal Package FlowRating</strong></button>
+                                        </ul>
+                                    </td>
+                                    <td width="50%">
+                                        <ul class="list-group">
+                                            <button class="active list-group-item-action list-group-item">Values</button>
+                                            <button class="list-group-item-action list-group-item"><strong>{record ? `${record.assetName}` : ''}</strong></button>
+                                            <button class="list-group-item-action list-group-item"><strong>{record ? `${record.model}` : ''}</strong></button>
+                                            <button class="list-group-item-action list-group-item"><strong>{record ? `${record.make}` : ''}</strong></button>
+                                            <button class="disabled list-group-item-action list-group-item"><strong>{record ? `${record.modelYear}` : ''}</strong></button>
+                                            <button class="list-group-item-action list-group-item"><strong>{record ? `${record.compressorController}` : ''}</strong></button>
+                                            <button class="list-group-item-action list-group-item"><strong>{record ? `${record.compressorType}` : ''}</strong></button>
+                                            <button class="list-group-item-action list-group-item"><strong>{record ? `${record.distributorName}` : ''}</strong></button>
+                                            <button class="disabled list-group-item-action list-group-item"><strong>{record ? `${record.motorHP}` : ''}</strong></button>
+                                            <button class="disabled list-group-item-action list-group-item"><strong>{record ? `${record.nominalPackageFlowRating}` : ''}</strong></button>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                {/* </Collapse> */}
+            {/* </CardBody>
+        </Card> */}
+         {/* </Panel> */}
+         </div>
+    );
+};
+
+const AssetAlertsTab = ({ record }) => {
+    return (
+        <Panel xs={12} md={12} lg={12} title="Device Status">
+         <Table responsive className='table--bordered'>
+          <thead>
+          <tr>
+            <th>Status</th>
+            <th>Asset Name</th>
+            <th>Time Active</th>
+            <th>Alert Priority</th>
+            <th>Alert Status</th>
+            <th>Event</th>            
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><Badge color='success'>{record ? `${record.assetName}` : ''}</Badge></td>
+            <td>1141233567</td>
+            <td>LS 110</td>
+            <td>Asset 3</td>
+            <td>2018/10/31</td>
+            <td>Show</td>           
+          </tr>
+          <tr>
+            <td><Badge color='success'>Available</Badge></td>
+            <td>1212343457</td>
+            <td>LS 90</td>
+            <td>Asset 1</td>
+            <td>2018/10/31</td>
+            <td>Show</td>                        
+          </tr>
+          <tr>
+            <td><Badge color='success'>Available</Badge></td>
+            <td>1212343458</td>
+            <td>LS 110</td>
+            <td>Asset 1</td>
+            <td>2018/10/31</td>
+            <td>Show</td>                       
+          </tr>
+          <tr>
+            <td><Badge color='success'>Available</Badge></td>
+            <td>1212123434</td>
+            <td>LS 110</td>
+            <td>Asset 2</td>
+            <td>2018/10/31</td>
+            <td>Show</td>                           
+          </tr>
+          <tr>
+            <td><Badge color='danger'>Unavailable</Badge></td>
+            <td>1121234345</td>
+            <td>LS 110</td>
+            <td>Asset 2</td>
+            <td>2018/10/31</td>
+            <td>Show</td>                          
+          </tr>
+          <tr>
+            <td><Badge color='danger'>Unavailable</Badge></td>
+            <td>1231212343</td>
+            <td>LS 110</td>
+            <td>Asset 3</td>
+            <td>2018/10/31</td>
+            <td>Show</td>                      
+          </tr>
+          </tbody>
+        </Table>
+      </Panel>
+    );
+};
+
 export const showAsset = (props) => (
 
-    <Show title={<AssetTitle />} {...props}  >
+    <Show title="Assets" {...props}  >
         <TabbedShowLayout >
 
             <Tab label="Location" >
@@ -78,8 +210,9 @@ export const showAsset = (props) => (
                     </Col>
                 </Row> */}
 
+                <AssetDetailsTab />
 
-                <TextField label="Name" source="assetName" />
+                {/* <TextField label="Name" source="assetName" />
 
                 <TextField label="Model" source="model" />
 
@@ -95,7 +228,7 @@ export const showAsset = (props) => (
 
                 <TextField label="Motor HP" source="motorHP" />
 
-                <TextField label="Nominal Package FlowRating" source="nominalPackageFlowRating" />
+                <TextField label="Nominal Package FlowRating" source="nominalPackageFlowRating" /> */}
 
 
 
@@ -103,7 +236,6 @@ export const showAsset = (props) => (
 
             <Tab label="Alerts" filters={<AlertFilter />}>
                 <ReferenceManyField filters={<AlertFilter />}  {...props} label="Alerts" target="telematicsSerialNumber" source="telematicsSerialNumber" reference="getAssetAlerts" >
-
                     {/* <List {...props}filters={<AlertFilter />} filter={{ telematicsSerialNumber:"telematicsSerialNumber"}} title="Alerts"> */}
                     <Datagrid >
                         <TextField source="assetName" />

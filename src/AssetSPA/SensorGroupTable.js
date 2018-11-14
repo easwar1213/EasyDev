@@ -32,7 +32,6 @@ const styles = theme => ({
 class SensorGroupTable extends React.Component {
 
     state = {
-
         sensorGroupList: [],
         showSensorGroupList: false,
         showSensorList: false,
@@ -51,7 +50,7 @@ class SensorGroupTable extends React.Component {
             filter: {},
         })
             .then((response) => {
-
+                console.log(response);
                 let sensorGroupList = response.data
                 this.setState({ sensorGroupList: sensorGroupList })
                // console.log(sensorGroupList)

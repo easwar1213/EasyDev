@@ -25,9 +25,7 @@ import Login from './CustomLoginPage';
 import dataProvider from './dataProvider';
 import CustomLoginPage from './CustomLoginPage';
 import CustomLayout from './CustomLayout'
-
-
-
+import './index.css';
 
 
   class App extends React.Component {
@@ -51,7 +49,7 @@ import CustomLayout from './CustomLayout'
           options={{ label: 'Assets' }}
           list={AssetList}
           show={showAsset}
-          icon={AssetIcon}
+          icon={AssetIcon}          
         />
         
         <Resource

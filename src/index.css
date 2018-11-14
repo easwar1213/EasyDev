@@ -3,13 +3,24 @@ body {
   padding: 0;
   font-family: Roboto,sans-serif !important;
 }
-.noPadd{
-  padding:0px !important;
+
+
+/* Login Page Background Image Style */
+.Login-main-1 {    
+  background-position: center top !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
 }
-.MuiCardContent-root-203{
-  padding:0px !important;
+
+/* Login Form Style */
+.Login-card-2 {    
+  min-width: auto !important;
+  margin-top: 6em !important;  
+  border: solid #fff;
+  border-radius: 8px !important;  
+  background: rgba(130,130,130,.3) !important;
+  padding: 20px 22px !important;
 }
-/* CUSTOM CSS */
 
 .show-page #map{
   margin-top:15px;
@@ -341,6 +352,14 @@ font-size: 0.9rem;
   border: none !important;
 }
 
+.badge{
+  color: #fff !important;
+    padding: 6px 20px !important;
+    border-radius: 15px !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+}
+
 .badge-success {
   color: #fff;
   background-color: #4ce1b6 !important;
@@ -361,14 +380,6 @@ font-size: 0.9rem;
   background-color: #70bbfd !important;
 }
 
-.table .badge {
-  color: #fff !important;
-  padding: 6px 20px !important;
-  border-radius: 15px !important;
-  font-size: 12px !important;
-  font-weight: 400 !important;
-}
-
 .MuiInput-input-65 {
   padding: 6px 36px 8px 0px !important;
 }
@@ -378,3 +389,85 @@ font-size: 0.9rem;
   background-repeat: no-repeat !important;
   background-size: cover !important;
 }
+
+.collapse__title {
+  background-color: #f2f4f7;
+  border-bottom: solid 1px #dddddd;
+  padding: 8px 15px;
+  cursor: pointer;
+  position: relative;
+  background: transparent;
+  display: block;
+  width: 100%;
+  border: none;
+  text-align: left;
+}
+.collapse__title p {
+    color: #444444;
+  }
+
+.collapse__titlesvg {
+    display: none;
+  }
+
+  .collapse__content {
+    padding: 15px 20px 0 25px;
+    max-width: 1320px;
+  }
+
+  .collapse__wrapper .collapse__title {
+    padding: 15px 25px;
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,.05);
+    transition: background-color .3s;
+}
+
+.collapse__wrapper.with-shadow {
+  margin-bottom: 10px;
+  box-shadow: none;
+}
+
+.collapse__title p svg {
+  float: right;
+  width: 14px;
+  height: 14px;
+  fill: #646777 !important;
+}
+
+.collapse__title p {
+  font-weight: 700;
+  margin-top: 0;
+  transition: all .3s;
+  position: relative;
+  font-size: 13px;
+  margin-bottom: 0px !important;
+}
+
+.collapse__content {
+  color: #646777 !important;
+  font-size: 13px !important;
+}
+
+/* Collpse Style */
+.list-group-item.active {  
+  background-color: lightseagreen!important;
+  border-color: lightseagreen!important;
+}
+
+.collapse__wrapper .collapse__title {  
+  border-radius: 6px;  
+  background-color: #5693ac !important; 
+}
+
+.page-title {  
+  font-size: 20px;
+}
+
+.MuiTableCell-numeric-270 {
+  text-align: left !important;
+  flex-direction: row-reverse;
+}
+
+.MuiTableCell-root-599{
+  text-align: left !important;
+}
+

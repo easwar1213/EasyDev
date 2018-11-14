@@ -12,6 +12,8 @@ import DefaultLoginForm from './LoginForm';
 //import CardActionArea from "@material-ui/core/CardActionArea";
 import CardMedia from "@material-ui/core/CardMedia";
 
+import './index.css';
+
 
 const styles = theme => ({
     

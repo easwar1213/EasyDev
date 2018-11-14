@@ -19,6 +19,7 @@ import APIConfig from "./APIConfig.json"
 
 const convertDataProviderRequestToHTTP = (type, resource, params) => {
     let token = localStorage.getItem('token')
+    console.log(token);
     let API_URL = APIConfig[resource];
     let options = {}
 
