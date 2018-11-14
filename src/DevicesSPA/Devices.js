@@ -102,7 +102,7 @@ const DeviceGrid = ({ ids, data, basePath }) => (
                     <TableCell>Device</TableCell>
                     <TableCell> Asset</TableCell>
                     <TableCell>Last Comm.</TableCell>
-                    <TableCell>Show Details</TableCell>
+                    <TableCell>Show</TableCell>
                 </TableRow>
             </TableHead>
             <TableBody>
