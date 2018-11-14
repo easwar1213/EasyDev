@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,600,700');
+
 body {
   margin: 0;
   padding: 0;
@@ -42,7 +44,7 @@ table thead th, table thead th span{
   color:#646777 !important;
 }
 table tbody td{
-  font-size:14px !important;
+  font-size:13px !important;
   color:#646777 !important;
 }
 .list-page [class^="MuiToolbar"] {
@@ -91,6 +93,9 @@ div[class^="MuiDrawer"] > div {
  }
 svg[class^="MuiSvgIcon"]{
   fill:#0F263A !important;
+}
+.MuiButton-label-164 svg[class^="MuiSvgIcon"]{
+  fill:#70bbfd !important;
 }
 h2[class^="MuiTypography"]{
   color:#000000 !important;
@@ -154,7 +159,7 @@ div[class^="MuiDrawer"] div[class^="MuiPaper"] {
   text-decoration:none !important;
   font-size:14px;
 } 
-label[class^="MuiFormLabel"] > span{ font-size:22px !important; color:#000000 !important; font-weight:bold; }
+label[class^="MuiFormLabel"] > span{ font-size:22px !important; color:#646777 !important; font-weight:bold; }
 .show-page div[class^="MuiFormControl"]{ width:100%; display:block;}
 form div[class^="MuiFormControl"]{ width:auto !important; display:inline-block !important;}
 .show-page div[class^="MuiFormControl"] div[class^="Labeled"]{ padding:0 !important;}
@@ -162,7 +167,7 @@ form div[class^="MuiFormControl"]{ width:auto !important; display:inline-block !
 
 
 .recharts-wrapper, .recharts-wrapper svg{ width:100% !important;}
-.list-page span[class^="MuiButton"]{ color:#000000;}
+.list-page span[class^="MuiButton"]{ color:#70bbfd;}
 .list-page span[class^="MuiButton"] span{ text-transform:capitalize !important; font-weight: 600; }
 
 .layout, div[class^="Layout"] { max-width:100% !important;   min-width:auto !important; background: #f2f4f7 !important;}
@@ -278,10 +283,10 @@ padding-top: 0px !important;
 /* .panel{
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2) !important;
 } */
-
+/* 
 table tbody td{
 	color: #0F263A !important;
-}
+} */
 .datagrid-body tr:hover{
 /* background: linear-gradient(to right, #FF5722, #FBCA00) !important; */
 /* background-color: #FBCA00 !important; */
@@ -403,7 +408,7 @@ font-size: 0.9rem;
   text-align: left;
 }
 .collapse__title p {
-    color: #444444;
+    color: #fff;
   }
 
 .collapse__titlesvg {
@@ -430,15 +435,15 @@ font-size: 0.9rem;
   float: right;
   width: 14px;
   height: 14px;
-  fill: #646777 !important;
+  fill: #fff !important;
 }
 
 .collapse__title p {
-  font-weight: 700;
+  font-weight: 500;
   margin-top: 0;
   transition: all .3s;
   position: relative;
-  font-size: 13px;
+  font-size: 14px;
   margin-bottom: 0px !important;
 }
 
@@ -455,11 +460,14 @@ font-size: 0.9rem;
 
 .collapse__wrapper .collapse__title {  
   border-radius: 6px;  
-  background-color: #5693ac !important; 
+  background-color: #70bbfd !important; 
 }
 
 .page-title {  
   font-size: 20px;
+  color: #646777 !important;
+  font-weight: 500;
+  text-transform: capitalize;
 }
 
 .MuiTableCell-numeric-270 {
@@ -471,3 +479,20 @@ font-size: 0.9rem;
   text-align: left !important;
 }
 
+.MuiTableCell-root-66 {
+  border-bottom-color: #eff1f5 !important;
+}
+
+.MuiButton-label-165 svg[class^="MuiSvgIcon"] {
+  fill: #70bbfd !important;
+}
+
+.info-title-span {
+  font-size: 20px;
+  color: #646777 !important;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.list-group-item-action {
+  font-size: 14px !important;
+}
