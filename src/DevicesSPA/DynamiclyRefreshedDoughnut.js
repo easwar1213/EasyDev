@@ -13,7 +13,6 @@ const getState = (props) => ({
     '% UnAvaiable',
   ],
   datasets: [{
-    //data: [getRandomInt(0, 100), getRandomInt(0, 100)],
     data: (props.value)?[props.value.unavaiableDevicePercentage,props.value.availableDevicePercentage]:[0,0],
     backgroundColor: [
       '#4ce1b6',
@@ -41,20 +40,16 @@ class DynamiclyRefreshedDoughnut extends PureComponent {
 }
 
   componentWillMount() {
-    // setInterval(() => {
       this.setState({ data: getState(this.props) });
-    // }, 4000);
   }
 
   render() {
-    //const { t } = this.props;
-
     return (      
       // <Panel xs={12} md={12} lg={6} title="Device Status Distribution">      
       //   <Doughnut data={this.state.data} />        
       // </Panel>
       <div>
-      <Doughnut height={280} options={this.state.options} data={this.state.data} />
+      <Doughnut height={280} data={this.state.data} />
   </div>
     )
   }

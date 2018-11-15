@@ -3,17 +3,11 @@ import React, { PureComponent } from 'react';
 import { Doughnut } from 'react-chartjs-2';
 import Paper from "@material-ui/core/Paper";
 
-
-
-
-
 const getState = (props) => ({
     labels: [
         '% Unavailable',
         '% Avaiable',
     ],
-
-
     datasets: [{
         data: (props.value)?[props.value.unavaiableDevicePercentage,props.value.availableDevicePercentage]:[0,0],
         backgroundColor: [
@@ -51,7 +45,6 @@ class StatusPieChart extends PureComponent {
         //setInterval(() => {
         this.setState({data: getState(this.props)});
         this.setState({ options: options });
-
         // }, 4000);
     }
 
