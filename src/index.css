@@ -197,9 +197,13 @@ form div[class^="MuiFormControl"]{ width:auto !important; display:inline-block !
 }
 .card-body .table thead th{
   border-top: none !important;
-  color: #646777 !important;
+  color: #646777;
   border-bottom-color: #eff1f5 !important;
   font-size: 14px;
+}
+
+.table-heading th{
+  color: #fff !important;
 }
 .card-body .table tbody td{
   color: #646777;
@@ -232,6 +236,17 @@ div[class^="MuiDrawer"] div[class^="MuiPaper"] {
   #deviceContainer{
     max-width:calc(100% - 1px);
     padding:0px;
+  }
+}
+
+@media (max-width: 599px){
+  .MuiPaper-elevation11-52, .MuiPaper-rounded-40, .MuiPaper-root-39 {
+    box-shadow: none !important;
+    border-radius: none !important;
+  }
+  div[class^="MuiDrawer"] div[class^="MuiPaper"] {
+    box-shadow: none !important;
+    border-radius: none !important;
   }
 }
 /* gokul */
@@ -461,7 +476,7 @@ font-size: 0.9rem;
 
 .collapse__wrapper .collapse__title {  
   border-radius: 6px;  
-  background-color: #70bbfd !important; 
+  background-color: #4570b1 !important; 
 }
 
 .page-title {  
@@ -509,3 +524,47 @@ font-size: 0.9rem;
 .MuiPaper-elevation1-17, .MuiPaper-elevation1-20{
   box-shadow: none !important;
 }
+
+.MuiPaper-elevation1-42 {
+  box-shadow: none !important;
+}
+
+.panel__refresh svg {
+  fill: #4ce1b6;
+  position: absolute;
+  -webkit-animation: refresh 1s linear infinite;
+  animation: refresh 1s linear infinite;
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  top: calc(50% - 24px);
+  left: calc(50% - 24px);
+}
+
+.table-class-new {
+  float: left;
+}
+
+.table-bordered thead {
+  background-color: #646777 !important;
+}
+
+.table-bordered {
+  border: 1px solid #dee2e6 !important;
+}
+
+.heading-txt {
+  border-left: 3px solid #646777;
+  background-color: #f1f1f1;
+  padding: 8px;
+}
+
+.TableResponsive, .Datagrid-table-71 {
+  width: 100% !important;
+  overflow-x: auto;
+}
+
+
+
+
+

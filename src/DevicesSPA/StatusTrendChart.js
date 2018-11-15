@@ -18,6 +18,8 @@ const data1 = [
 class StatusTrendChart extends PureComponent {
     render() {
         let data =this.props.data;
+        console.log("line");
+        console.log(data);
         return (
             <div>
             <LineChart width={750} height={298} data={data}

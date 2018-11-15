@@ -24,7 +24,8 @@ import { fetchEnd, fetchStart, required, Button, GET_LIST } from 'react-admin';
 import dataProvider from '../dataProvider'
 import Loader from '../Loader'
 import Panel from '../components/Panel';
-import RandomAnimatedLine from './RandomAnimatedLine'
+import RandomAnimatedLine from './RandomAnimatedLine';
+import SimpleLineChart from './SimpleLineChart';
 
 const styles = theme => ({
     card: {
@@ -124,9 +125,9 @@ class StatusTrendContainer extends React.Component {
             //     <Divider />
             //     <StatusTrendChart />
             // </Card>
-            <Panel xs={12} md={12} lg={6} title="Device Status Details">
+            <Panel xs={12} md={12} lg={12} title="Device Status Details">
                     {this.state.isRendering === true && (<Loader/>)}
-                    {this.state.isRendering ===false &&(<StatusTrendChart data ={this.state.Data} />)}
+                    {this.state.isRendering ===false &&(<SimpleLineChart data ={this.state.Data} />)}
             </Panel>
         );
     }

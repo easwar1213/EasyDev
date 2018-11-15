@@ -26,7 +26,7 @@ export const AssetList = (props) => (
         <Row>
             {/* <AssetDetails /> */}
             <Panel xs={12} md={12} lg={12} title="Asset Details">
-                <List title="Assets" {...props} filters={<AssetFilter />}  >
+                <List title="Assets" {...props} filters={<AssetFilter />} className="TableResponsive" >
                     <Datagrid>
                         <TextField source="telematicsSerialNumber" />
                         <TextField source="make" />
@@ -52,7 +52,7 @@ const AssetDetailsTab = ({ record }) => {
         {/* <Card>
             <CardBody>  */}
                 {/* <Collapse className="with-shadow" title="Asset Details "> */}
-                    <div class="card">
+                    {/* <div class="card">
                         <div class="card-body">
                             <table width="100%">
                                 <tr width="100%">
@@ -87,11 +87,64 @@ const AssetDetailsTab = ({ record }) => {
                                 </tr>
                             </table>
                         </div>
-                    </div>
+                    </div> */}
                 {/* </Collapse> */}
             {/* </CardBody>
         </Card> */}
          {/* </Panel> */}
+            <Col md={12} lg={12} xs={12} className="table-class-new">
+                <br/>
+                <Col md={1} lg={1} className="table-class-new"></Col>
+                <Col md={10} lg={10} className="table-class-new">
+                    <Table responsive className='table-bordered'>
+                        <thead className="table-heading">
+                            <tr>
+                                <th>Field Name</th>
+                                <th>Values</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Name</strong></td>
+                                <td><strong>{record ? `${record.assetName}` : ''}</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Device Model</strong></td>
+                                <td><strong>{record ? `${record.model}` : ''}</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Make</strong></td>
+                                <td><strong>{record ? `${record.Make}` : ''}</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Model Year</strong></td>
+                                <td><strong>{record ? `${record.modelYear}` : ''}</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Compressor Controller</strong></td>
+                                <td><strong>{record ? `${record.compressorController}` : ''}</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Compressor Type</strong></td>
+                                <td><strong>{record ? `${record.compressorType}` : ''}</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Distributor Name</strong></td>
+                                <td><strong>{record ? `${record.distributorName}` : ''}</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Motor HP</strong></td>
+                                <td><strong>{record ? `${record.motorHP}` : ''}</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Nominal Package FlowRating</strong></td>
+                                <td><strong>{record ? `${record.nominalPackageFlowRating}` : ''}</strong></td>
+                            </tr>
+                        </tbody>
+                    </Table>
+                </Col>
+                <Col md={1} lg={1} className="table-class-new"></Col>
+            </Col>
          </div>
     );
 };
@@ -235,9 +288,9 @@ export const showAsset = (props) => (
             </Tab>
 
             <Tab label="Alerts" filters={<AlertFilter />}>
-                <ReferenceManyField filters={<AlertFilter />}  {...props} label="Alerts" target="telematicsSerialNumber" source="telematicsSerialNumber" reference="getAssetAlerts" >
+                <ReferenceManyField filters={<AlertFilter />}  {...props} label="Alerts" target="telematicsSerialNumber" source="telematicsSerialNumber" reference="getAssetAlerts" className="TableResponsive">
                     {/* <List {...props}filters={<AlertFilter />} filter={{ telematicsSerialNumber:"telematicsSerialNumber"}} title="Alerts"> */}
-                    <Datagrid >
+                    <Datagrid>
                         <TextField source="assetName" />
                         <TextField label="Time Active" source="timeStamp" />
                         <TextField source="alertPriority" />
@@ -249,7 +302,7 @@ export const showAsset = (props) => (
             </Tab>
 
             <Tab label="Maintenance">
-                <ReferenceManyField filters={<AssetFilter />} label="Maintenance" target="telematicsSerialNumber" source="telematicsSerialNumber" reference="getAssetMaintenance" >
+                <ReferenceManyField filters={<AssetFilter />} label="Maintenance" target="telematicsSerialNumber" source="telematicsSerialNumber" reference="getAssetMaintenance" className="TableResponsive">
                     <Datagrid>
                         <TextField source="plan" />
                         <TextField source="serviceRunHours" />

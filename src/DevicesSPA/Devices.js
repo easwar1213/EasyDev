@@ -2,7 +2,7 @@ import React from 'react';
 import { Tab, TabbedShowLayout, ShowView, ShowController, BooleanField, ReferenceArrayField, NumberInput, FormDataConsumer, BooleanInput, Labeled, EmailField, ReferenceArrayInput, SelectArrayInput, ArrayInput, SimpleFormIterator, RichTextInput, DateInput, ArrayField, ShowButton, Show, Filter, List, Edit, Create, Datagrid, ReferenceField, TextField, EditButton, DisabledInput, LongTextInput, ReferenceInput, SelectInput, SimpleForm, TextInput, SimpleShowLayout } from 'react-admin';
 import { Field, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
-import Table from '@material-ui/core/Table';
+// import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
@@ -25,6 +25,7 @@ import { Col, Container, Row, Badge } from 'reactstrap';
 import Panel from '../components/Panel';
 import { Card, CardBody } from 'reactstrap';
 import Collapse from '../components/Collapse';
+import Table from '../components/table/Table';
 
 const styles = theme => ({
     root: {
@@ -56,8 +57,10 @@ export const DeviceList = (props) => (
         <Row>
             {/* <DynamiclyRefreshedDoughnut /> */}
             <StatusStatisticsContainer />
+        </Row>
+        <Row>
             {/* <RandomAnimatedLine /> */}
-            <StatusTrendContainer/>
+            <StatusTrendContainer />
         </Row>
         <Row>
             {/* <DeviceDetails /> */}
@@ -96,7 +99,7 @@ export const DeviceList = (props) => (
 const DeviceGrid = ({ ids, data, basePath }) => (
     <div style={{ gridStyle }}>
 
-        <Table style={{ tableLayout: 'auto' }}  >
+        <Table responsive style={{ tableLayout: 'auto' }}  >
             <TableHead>
                 <TableRow>
                     <TableCell>Status</TableCell>
@@ -251,8 +254,8 @@ const DeviceTitlee = ({ record }) => {
     return (
         // <Panel xs={12} md={12} lg={12} title={"Device : " + record.model+" - "+record.telematicsSerialNumber}> 
         <Card>
-            <CardBody>                
-                <Collapse className="with-shadow" title="Device Details ">
+            <CardBody>
+                {/* <Collapse className="with-shadow" title="Device Details ">
                     <div class="card">
                         <div class="card-body">
                             <table width="100%">
@@ -278,9 +281,7 @@ const DeviceTitlee = ({ record }) => {
                                 </tr>
                             </table>
                         </div>
-                    </div>                   
-                </Collapse>
-                <Collapse className="with-shadow" title="Asset Details ">
+                    </div>   
                     <div class="card">
                         <div class="card-body">
                             <table width="100%">
@@ -316,8 +317,93 @@ const DeviceTitlee = ({ record }) => {
                                 </tr>
                             </table>
                         </div>
-                    </div>
-                </Collapse>
+                    </div>                
+                </Collapse>                 */}
+                {/* <Collapse className="with-shadow" title="Device Details "> */}
+                    <h5 class="bold-text heading-txt">Device Details</h5>
+                    <div class="card">
+                        <div class="card-body">
+                            <Col md={6} lg={6} xs={12} className="table-class-new">
+                                <h5>Device Details</h5>
+                                <Table responsive className='table-bordered'>
+                                    <thead className="table-heading">
+                                        <tr>
+                                            <th>Field Name</th>
+                                            <th>Values</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Telematics Serial Number</strong></td>
+                                            <td><strong>{record ? `${record.telematicsSerialNumber}` : ''}</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Device Model</strong></td>
+                                            <td><strong>{record ? `${record.model}` : ''}</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Activation Date</strong></td>
+                                            <td><strong>{record ? `${record.activatedDate}` : ''}</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Last Communication</strong></td>
+                                            <td><strong>{record ? `${record.lastCommunicated}` : ''}</strong></td>
+                                        </tr>
+                                    </tbody>
+                                </Table>
+                            </Col>
+                            <Col md={6} lg={6} xs={12} className="table-class-new">
+                                <h5>Asset Details</h5>
+                                <Table responsive className='table-bordered'>
+                                    <thead className="table-heading">
+                                        <tr>
+                                            <th>Field Name</th>
+                                            <th>Values</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Name</strong></td>
+                                            <td><strong>{record ? `${record.assetName}` : ''}</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Device Model</strong></td>
+                                            <td><strong>{record ? `${record.model}` : ''}</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Make</strong></td>
+                                            <td><strong>{record ? `${record.Make}` : ''}</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Model Year</strong></td>
+                                            <td><strong>{record ? `${record.modelYear}` : ''}</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Compressor Controller</strong></td>
+                                            <td><strong>{record ? `${record.compressorController}` : ''}</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Compressor Type</strong></td>
+                                            <td><strong>{record ? `${record.compressorType}` : ''}</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Distributor Name</strong></td>
+                                            <td><strong>{record ? `${record.distributorName}` : ''}</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Motor HP</strong></td>
+                                            <td><strong>{record ? `${record.motorHP}` : ''}</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Nominal Package FlowRating</strong></td>
+                                            <td><strong>{record ? `${record.nominalPackageFlowRating}` : ''}</strong></td>
+                                        </tr>
+                                    </tbody>
+                                </Table>
+                            </Col>
+                        </div>
+                    </div>                   
+                {/* </Collapse> */}
             </CardBody>
         </Card>
         //</Panel>
