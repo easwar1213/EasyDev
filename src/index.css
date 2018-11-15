@@ -564,6 +564,22 @@ font-size: 0.9rem;
   overflow-x: auto;
 }
 
+.MuiFormLabel-root-50 {
+  color: white !important;
+  padding: 0;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  line-height: 1;
+}
+
+.panel__title .subhead {
+  text-transform: none;
+  font-size: 13px;
+  line-height: 18px;
+  opacity: .7;
+  transition: .3s;
+}
 
 
 

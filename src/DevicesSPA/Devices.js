@@ -57,11 +57,12 @@ export const DeviceList = (props) => (
         <Row>
             {/* <DynamiclyRefreshedDoughnut /> */}
             <StatusStatisticsContainer />
-        </Row>
-        <Row>
-            {/* <RandomAnimatedLine /> */}
             <StatusTrendContainer />
         </Row>
+        {/* <Row>
+            <RandomAnimatedLine /> 
+            <StatusTrendContainer />
+        </Row> */}
         <Row>
             {/* <DeviceDetails /> */}
             <Panel xs={12} md={12} lg={12} title="Device Status Details">

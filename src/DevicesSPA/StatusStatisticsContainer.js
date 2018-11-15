@@ -154,7 +154,8 @@ class StatusStatisticsContainer extends React.Component {
             //         </CardContent>
             //     </Collapse>
             // </Card>
-            <Panel xs={12} md={12} lg={6} title="Device Status Details">
+            <Panel xs={12} md={12} lg={4} title="Device Status Statistics"  subhead={"on " + new Date().toLocaleString()}>
+                    <h6 class="bold-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;% Device Status Distribution</h6>            
                     {this.state.isRendering ===true &&(<Loader/>)}
                     {this.state.isRendering ===false &&( <DynamiclyRefreshedDoughnut value ={this.state.pieChart}/>)}
             </Panel>

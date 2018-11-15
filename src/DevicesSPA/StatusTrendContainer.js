@@ -125,7 +125,7 @@ class StatusTrendContainer extends React.Component {
             //     <Divider />
             //     <StatusTrendChart />
             // </Card>
-            <Panel xs={12} md={12} lg={12} title="Device Status Details">
+            <Panel xs={12} md={12} lg={8} title="Device Status Trend" subhead="Count of Assets with different Status">
                     {this.state.isRendering === true && (<Loader/>)}
                     {this.state.isRendering ===false &&(<SimpleLineChart data ={this.state.Data} />)}
             </Panel>
