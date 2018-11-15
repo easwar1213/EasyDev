@@ -19,6 +19,8 @@
 
 
     "getDeviceList":"https://lxvn7z116m.execute-api.us-east-2.amazonaws.com/dev",
+    "DeviceStatusStatistics":"https://lxvn7z116m.execute-api.us-east-2.amazonaws.com/dev",
+    "DeviceStatusTrend":"https://lxvn7z116m.execute-api.us-east-2.amazonaws.com/dev",
 
 
 

@@ -54,9 +54,9 @@ table tbody td{
   min-width: 140px;
 }
 
-div[class^="MuiPaper"] {
+.show-page div[class^="MuiPaper"] {
   box-shadow:none !important;
-  border-radius:0px !important;
+  border-radius:5px !important;
 }
 .layout div[class^="MuiDrawer"] svg[class^="MuiSvgIcon"]  { width: 20px !important; height: 20px !important;}
 .layout div[class^="MuiDrawer"] div[class^="Menu"]{ padding-top:15px;}
@@ -143,6 +143,7 @@ div[class^="MuiDrawer"] div[class^="MuiPaper"] div[class^="Menu"] ul{
 div[class^="MuiDrawer"] div[class^="MuiPaper"]{
 
   min-height: calc(100vh - 60px) !important;
+  border-radius: 0px !important;
 } 
 .layout div[class^="MuiDrawer"]{
   overflow:hidden;
@@ -499,4 +500,12 @@ font-size: 0.9rem;
 
 .Datagrid-rowCell-79:last-child {
   padding: 0px !important;
+}
+
+.MuiPaper-rounded-15 {
+  border-radius: 0px !important;
+}
+
+.MuiPaper-elevation1-17, .MuiPaper-elevation1-20{
+  box-shadow: none !important;
 }

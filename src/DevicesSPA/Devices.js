@@ -54,8 +54,10 @@ export const DeviceList = (props) => (
             <br />
         </Row>
         <Row>
-            <DynamiclyRefreshedDoughnut />
-            <RandomAnimatedLine />
+            {/* <DynamiclyRefreshedDoughnut /> */}
+            <StatusStatisticsContainer />
+            {/* <RandomAnimatedLine /> */}
+            <StatusTrendContainer/>
         </Row>
         <Row>
             {/* <DeviceDetails /> */}
@@ -247,7 +249,7 @@ const DeviceTitle = ({ record }) => {
 
 const DeviceTitlee = ({ record }) => {
     return (
-        <Panel xs={12} md={12} lg={12} title="Device Status Distribution"> 
+        // <Panel xs={12} md={12} lg={12} title={"Device : " + record.model+" - "+record.telematicsSerialNumber}> 
         <Card>
             <CardBody>                
                 <Collapse className="with-shadow" title="Device Details ">
@@ -318,7 +320,7 @@ const DeviceTitlee = ({ record }) => {
                 </Collapse>
             </CardBody>
         </Card>
-        </Panel>
+        //</Panel>
     );
 };
 

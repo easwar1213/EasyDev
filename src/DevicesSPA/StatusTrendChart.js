@@ -17,10 +17,10 @@ const data1 = [
 
 class StatusTrendChart extends PureComponent {
     render() {
-
+        let data =this.props.data;
         return (
-        <Panel lg={12} title="Device Status">
-            <LineChart width={750} height={298} data={data1}
+            <div>
+            <LineChart width={750} height={298} data={data}
                 margin={{ top: 20, right: 20, left: 30, bottom: 5 }}>
                 <XAxis dataKey="name" />
                 <YAxis  />
@@ -31,7 +31,7 @@ class StatusTrendChart extends PureComponent {
                 <Line type="monotone" dataKey="Available" stroke="#81C784" />
                 <Brush />
             </LineChart>
-        </Panel>
+        </div>
         );
     }
 }

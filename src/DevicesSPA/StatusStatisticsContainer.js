@@ -21,6 +21,12 @@ import AlertIcon from '@material-ui/icons/ErrorOutline';
 import AckIcon from '@material-ui/icons/ThumbUp';
 import StatusPieChart from './StatusPieChart'
 import StatusDataTable from './StatusDataTable'
+import DynamiclyRefreshedDoughnut from './DynamiclyRefreshedDoughnut';
+
+import {fetchEnd,fetchStart,required,Button,GET_ONE} from 'react-admin';
+import dataProvider from '../dataProvider'
+import Loader from '../Loader'
+import Panel from '../components/Panel';
 
 const styles = theme => ({
     card: {
@@ -52,64 +58,106 @@ const styles = theme => ({
 });
 
 class StatusStatisticsContainer extends React.Component {
-    state = { expanded: false };
+    state = { expanded: false ,
+        dataTable : '',
+        pieChart : '' ,
+        isRendering:true
+    };
 
     handleExpandClick = () => {
         this.setState(state => ({ expanded: !state.expanded }));
     };
 
+    componentWillMount(){
+        this.loadData();
+        
+        }
+        handleRefresh =() =>{
+          this.loadData()
+        }
+      loadData =() =>{
+        fetchStart();
+        this.setState({isRendering:true})
+        dataProvider(GET_ONE, 'DeviceStatusStatistics', { id: "DeviceStatusStatistics" })
+              .then((response) => {
+                console.log("response")
+                console.log(response)
+                let dataTable = response.data.dataTable
+                let pieChart = response.data.pieChart
+                  this.setState({ pieChart: pieChart });
+                  this.setState({ dataTable: dataTable });
+                  
+                  this.setState({isRendering:false})
+              })
+              .catch(error => {
+                  
+              })
+              .finally(() => {
+                 
+                  fetchEnd();
+              });
+      }
+
     render() {
         const { classes, avatarAlphabet, headerHeading, pierChartHeading, dataTableSource } = this.props;
 
         return (
-            <Card raised className={classes.card}>
-                <CardHeader
-                    avatar={
-                        <Avatar  className={classes.avatar}>
-                            {"S"}
-                        </Avatar>
-                    }
-                    action={
-                        <IconButton>
-                            <Refresh />
-                        </IconButton>
-                    }
-                    title={"Device Status Statistics"}
-                    subheader={"on " + new Date().toLocaleString()}
-                />
+            // <Card raised className={classes.card}>
+            //     <CardHeader
+            //         avatar={
+            //             <Avatar  className={classes.avatar}>
+            //                 {"S"}
+            //             </Avatar>
+            //         }
+            //         action={
+            //             <IconButton
+            //             onClick ={this.handleRefresh}
+            //             >
+            //                 <Refresh />
+            //             </IconButton>
+            //         }
+            //         title={"Device Status Statistics"}
+            //         subheader={"on " + new Date().toLocaleString()}
+            //     />
 
-                <Divider />
+            //     <Divider />
 
-                <CardContent>
-                    <Typography align="center" component="p">
-                        {"% Device Status Distribution"}
-                    </Typography>
-                    <br />
-                    <StatusPieChart />
-                </CardContent>
+            //     <CardContent>
+            //         <Typography align="center" component="p">
+            //             {"% Device Status Distribution"}
+            //         </Typography>
+            //         <br />
+            //         {/* <DynamiclyRefreshedDoughnut /> */}
+            //         {this.state.isRendering ===true &&(<Loader/>)}
+            //         {this.state.isRendering ===false &&( <StatusPieChart value ={this.state.pieChart}/>)}
+            //     </CardContent>
 
-                <Divider />
+            //     <Divider />
 
-                <CardActions className={classes.actions} disableActionSpacing>
-                    <IconButton
-                        className={classnames(classes.expand, {
-                            [classes.expandOpen]: this.state.expanded,
-                        })}
-                        onClick={this.handleExpandClick}
-                        aria-expanded={this.state.expanded}
-                        aria-label="Show more"
-                        label="Show"
-                    >
-                        <ExpandMoreIcon />
-                    </IconButton>
-                </CardActions>
-                <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
-                    <CardContent>
-                        <Typography align="center" paragraph>Asset Count</Typography>
-                        <StatusDataTable />
-                    </CardContent>
-                </Collapse>
-            </Card>
+            //     <CardActions className={classes.actions} disableActionSpacing>
+            //         <IconButton
+            //             className={classnames(classes.expand, {
+            //                 [classes.expandOpen]: this.state.expanded,
+            //             })}
+            //             onClick={this.handleExpandClick}
+            //             aria-expanded={this.state.expanded}
+            //             aria-label="Show more"
+            //             label="Show"
+            //         >
+            //             <ExpandMoreIcon />
+            //         </IconButton>
+            //     </CardActions>
+            //     <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
+            //         <CardContent>
+            //             <Typography align="center" paragraph>Asset Count</Typography>
+            //             <StatusDataTable />
+            //         </CardContent>
+            //     </Collapse>
+            // </Card>
+            <Panel xs={12} md={12} lg={6} title="Device Status Details">
+                    {this.state.isRendering ===true &&(<Loader/>)}
+                    {this.state.isRendering ===false &&( <DynamiclyRefreshedDoughnut value ={this.state.pieChart}/>)}
+            </Panel>
         );
     }
 }

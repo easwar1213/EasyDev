@@ -67,7 +67,7 @@ class RandomAnimatedLine extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      data: initialState
+      data: this.props
     };
   }
   
@@ -114,12 +114,16 @@ class RandomAnimatedLine extends PureComponent {
   }
   
   render() {
-    const {t} = this.props;
+    //const {t} = this.props;
+    let data =this.props.data;
 
     return (      
-      <Panel xs={12} md={12} lg={6} title="Device Status Trend">
-            <Line data={this.state.data} options={options}/>
-      </Panel>
+      // <Panel xs={12} md={12} lg={6} title="Device Status Trend">
+      //       <Line data={this.state.data} options={options}/>
+      // </Panel>
+      <div>
+      <Line data={this.state.data} options={options}/>
+    </div>
     )
   }
 }

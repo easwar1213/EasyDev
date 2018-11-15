@@ -1,42 +1,58 @@
 import React, { PureComponent } from 'react';
+
 import { Doughnut } from 'react-chartjs-2';
+import Paper from "@material-ui/core/Paper";
 
-function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
 
-const getState = () => ({
+
+
+
+const getState = (props) => ({
     labels: [
-      '% Unavailable',
-      '% Avaiable',    
+        '% Unavailable',
+        '% Avaiable',
     ],
-    datasets: [{
-      data: [getRandomInt(0, 1), getRandomInt(0, 2)],
-      backgroundColor: [            
-        '#81C784',
-        '#D81B60',
-      ],
-      hoverBackgroundColor: [
-        '#81C784',
-        '#D81B60',
-      ],
-      borderColor: 'rgba(255,255,255,0.54)'
-    }]
-  });
 
+
+    datasets: [{
+        data: (props.value)?[props.value.unavaiableDevicePercentage,props.value.availableDevicePercentage]:[0,0],
+        backgroundColor: [
+            '#D81B60',
+            '#81C784',
+        ],
+        hoverBackgroundColor: [
+            '#D81B60',
+            '#81C784',
+        ],
+        borderColor: 'rgba(255,255,255,0.54)',
+        borderWidth: 2,
+    }]
+});
+
+const options = {
+    legend: {
+        position: 'left'
+    }
+}
 class StatusPieChart extends PureComponent {
 
     constructor(props) {
+        console.log("Cosn val");
+        console.log(props.value);
         super(props);
         this.state = {
-            data: getState()
+            props:props,
+            data: getState(props),
+            options:options
         };
     }
 
     componentWillMount() {
-        setInterval(() => {
-        this.setState({ data: getState() });
-        }, 4000);
+        //setInterval(() => {
+        this.setState({data: getState(this.props)});
+        this.setState({ options: options });
+
+        // }, 4000);
     }
 
     render() {

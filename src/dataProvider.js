@@ -41,6 +41,7 @@ const convertDataProviderRequestToHTTP = (type, resource, params) => {
                 range: JSON.stringify([(page - 1) * perPage, page * perPage - 1]),
                 filter: JSON.stringify(params.filter),
             };
+            console.log(JSON.stringify(query));
             return {
                 url: `${API_URL}/${resource}?${stringify(query)}`
                 , options: options
@@ -184,8 +185,9 @@ const convertHTTPResponseToDataProvider = (response, type, resource, params) => 
 
 export default (type, resource, params) => {
 
-    const { fetchJson } = fetchUtils;
+    const { fetchJson } = fetchUtils;    
     const { url, options } = convertDataProviderRequestToHTTP(type, resource, params);
+    console.log(url);
     return fetchJson(url, options)
         .then(response => convertHTTPResponseToDataProvider(response, type, resource, params));
 };

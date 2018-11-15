@@ -20,6 +20,11 @@ import Divider from '@material-ui/core/Divider';
 import AlertIcon from '@material-ui/icons/ErrorOutline';
 import AckIcon from '@material-ui/icons/ThumbUp';
 import StatusTrendChart from './StatusTrendChart'
+import { fetchEnd, fetchStart, required, Button, GET_LIST } from 'react-admin';
+import dataProvider from '../dataProvider'
+import Loader from '../Loader'
+import Panel from '../components/Panel';
+import RandomAnimatedLine from './RandomAnimatedLine'
 
 const styles = theme => ({
     card: {
@@ -51,35 +56,78 @@ const styles = theme => ({
 });
 
 class StatusTrendContainer extends React.Component {
-    state = { expanded: false };
+    state = { expanded: false ,
+        isRendering:true,
+        Data: []
+   };
 
     handleExpandClick = () => {
         this.setState(state => ({ expanded: !state.expanded }));
     };
 
+    componentWillMount(){
+        this.loadData();
+        
+        }
+        handleRefresh =() =>{
+          this.loadData()
+        }
+        loadData = () => {
+            fetchStart();
+            this.setState({ isRendering: true })
+            //(GET_ONE, 'AlertPriorityTrend', { id: "AlertPriorityTrend" })
+            dataProvider(GET_LIST, 'DeviceStatusTrend', {
+              pagination: { page: 1, perPage: 5 },
+              sort: { field: 'title', order: 'DESC' },
+              filter: {
+                id: "DeviceStatusTrend",
+                dateRange: 1, //or 7 or 30 days,
+              },
+            })
+              .then((response) => {
+                this.setState({ Data: response.data });
+                console.log("DeviceStatusTrend")
+                 console.log(this.state.Data)
+                this.setState({ isRendering: false })
+              })
+              .catch(error => {
+                console.log(error)
+                this.setState({ isRendering: false })
+              })
+              .finally(() => {
+        
+                fetchEnd();
+                this.setState({ isRendering: false })
+              });
+          }
+
     render() {
         const { classes, avatarAlphabet, headerHeading, pierChartHeading, dataTableSource } = this.props;
 
         return (
-            <Card classes={classes.card} raised>
-                <CardHeader
-                    avatar={
-                        <Avatar classes={classes.avatar} >
-                            S
-                        </Avatar>
-                    }
-                    action={
-                        <IconButton>
-                            <Refresh />
-                        </IconButton>
-                    }
+            // <Card classes={classes.card} raised>
+            //     <CardHeader
+            //         avatar={
+            //             <Avatar classes={classes.avatar} >
+            //                 S
+            //             </Avatar>
+            //         }
+            //         action={
+            //             <IconButton>
+            //                 <Refresh />
+            //             </IconButton>
+            //         }
 
-                    title="Device Status Trend"
-                    subheader={"Count of Assets with different Status"}
-                />
-                <Divider />
-                <StatusTrendChart />
-            </Card>
+            //         title="Device Status Trend"
+            //         subheader={"Count of Assets with different Status"}
+            //     />
+            //     <Divider />
+            //     <StatusTrendChart />
+            // </Card>
+            <Panel xs={12} md={12} lg={6} title="Device Status Details">
+                    {this.state.isRendering === true && (<Loader/>)}
+                    {this.state.isRendering ===false &&(<StatusTrendChart data ={this.state.Data} />)}
+            </Panel>
         );
     }
 }
