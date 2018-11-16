@@ -55,7 +55,7 @@ export const DeviceList = (props) => (
         <Row>
             <StatusStatisticsContainer />
             <StatusTrendContainer />
-        </Row>      
+        </Row>
         <Row>
             <Panel xs={12} md={12} lg={12} title="Device Status Details">
                 <List title="Devices" {...props} perPage={5} sort={{ field: 'telematicsSerialNumber', order: 'DESC' }} >
@@ -63,7 +63,7 @@ export const DeviceList = (props) => (
                 </List>
             </Panel>
         </Row>
-    </Container>    
+    </Container>
 );
 
 
@@ -84,15 +84,15 @@ const DeviceGrid = ({ ids, data, basePath }) => (
             <TableBody>
                 {ids.map(id => {
                     return (
-                        <TableRow                            
+                        <TableRow
                             key={id}>
 
                             {(data[id]).avaiabilityStatus == 1 && (
-                                <TableCell><Badge color='success'>Available</Badge></TableCell>                                
+                                <TableCell><Badge color='success'>Available</Badge></TableCell>
                             )}
 
                             {(data[id]).avaiabilityStatus == 0 && (
-                                <TableCell><Badge color='danger'>Unavailable</Badge></TableCell>                               
+                                <TableCell><Badge color='danger'>Unavailable</Badge></TableCell>
                             )}
                             <TableCell>{(data[id]).telematicsSerialNumber}</TableCell>
                             <TableCell>{(data[id]).model}</TableCell>
@@ -110,7 +110,7 @@ const DeviceGrid = ({ ids, data, basePath }) => (
                                 <ShowButton
                                     resource="getDeviceList" basePath={basePath} record={(data[id])}
                                 />
-                            </TableCell>  
+                            </TableCell>
                         </TableRow>
                     );
                 })}
@@ -134,90 +134,90 @@ const DeviceDetailedView = ({ record }) => {
     return (
         // <Panel xs={12} md={12} lg={12} title={"Device : " + record.model+" - "+record.telematicsSerialNumber}> 
         <Card>
-            <CardBody>                
-                    <h5 class="bold-text heading-txt">Device Details</h5>
-                    <div class="card">
-                        <div class="card-body">
-                            <Col md={6} lg={6} xs={12} className="table-class-new">
-                                <h5>Device Details</h5>
-                                <Table responsive className='table-bordered'>
-                                    <thead className="table-heading">
-                                        <tr>
-                                            <th>Field Name</th>
-                                            <th>Values</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td><strong>Telematics Serial Number</strong></td>
-                                            <td><strong>{record ? `${record.telematicsSerialNumber}` : ''}</strong></td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Device Model</strong></td>
-                                            <td><strong>{record ? `${record.model}` : ''}</strong></td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Activation Date</strong></td>
-                                            <td><strong>{record ? `${record.activatedDate}` : ''}</strong></td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Last Communication</strong></td>
-                                            <td><strong>{record ? `${record.lastCommunicated}` : ''}</strong></td>
-                                        </tr>
-                                    </tbody>
-                                </Table>
-                            </Col>
-                            <Col md={6} lg={6} xs={12} className="table-class-new">
-                                <h5>Asset Details</h5>
-                                <Table responsive className='table-bordered'>
-                                    <thead className="table-heading">
-                                        <tr>
-                                            <th>Field Name</th>
-                                            <th>Values</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td><strong>Name</strong></td>
-                                            <td><strong>{record ? `${record.assetName}` : ''}</strong></td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Device Model</strong></td>
-                                            <td><strong>{record ? `${record.model}` : ''}</strong></td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Make</strong></td>
-                                            <td><strong>{record ? `${record.Make}` : ''}</strong></td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Model Year</strong></td>
-                                            <td><strong>{record ? `${record.modelYear}` : ''}</strong></td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Compressor Controller</strong></td>
-                                            <td><strong>{record ? `${record.compressorController}` : ''}</strong></td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Compressor Type</strong></td>
-                                            <td><strong>{record ? `${record.compressorType}` : ''}</strong></td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Distributor Name</strong></td>
-                                            <td><strong>{record ? `${record.distributorName}` : ''}</strong></td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Motor HP</strong></td>
-                                            <td><strong>{record ? `${record.motorHP}` : ''}</strong></td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Nominal Package FlowRating</strong></td>
-                                            <td><strong>{record ? `${record.nominalPackageFlowRating}` : ''}</strong></td>
-                                        </tr>
-                                    </tbody>
-                                </Table>
-                            </Col>
-                        </div>
-                    </div>                   
+            <CardBody>
+                <h5 class="bold-text heading-txt">{"Device : " + record.model+" - "+record.telematicsSerialNumber}</h5>
+                <div class="card">
+                    <div class="card-body">
+                        <Col md={6} lg={6} xs={12} className="table-class-new">
+                            <h5>Device Details</h5>
+                            <Table responsive className='table-bordered'>
+                                <thead className="table-heading">
+                                    <tr width="100%">
+                                        <th width="50%">Field Name</th>
+                                        <th width="50%">Values</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Telematics Serial Number</strong></td>
+                                        <td><strong>{record ? `${record.telematicsSerialNumber}` : ''}</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Device Model</strong></td>
+                                        <td><strong>{record ? `${record.model}` : ''}</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Activation Date</strong></td>
+                                        <td><strong>{record ? `${record.activatedDate}` : ''}</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Last Communication</strong></td>
+                                        <td><strong>{record ? `${record.lastCommunicated}` : ''}</strong></td>
+                                    </tr>
+                                </tbody>
+                            </Table>
+                        </Col>
+                        <Col md={6} lg={6} xs={12} className="table-class-new">
+                            <h5>Asset Details</h5>
+                            <Table responsive className='table-bordered'>
+                                <thead className="table-heading">
+                                    <tr width="100%">
+                                        <th width="50%">Field Name</th>
+                                        <th width="50%">Values</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Name</strong></td>
+                                        <td><strong>{record ? `${record.assetName}` : ''}</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Device Model</strong></td>
+                                        <td><strong>{record ? `${record.model}` : ''}</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Make</strong></td>
+                                        <td><strong>{record ? `${record.Make}` : ''}</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Model Year</strong></td>
+                                        <td><strong>{record ? `${record.modelYear}` : ''}</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Compressor Controller</strong></td>
+                                        <td><strong>{record ? `${record.compressorController}` : ''}</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Compressor Type</strong></td>
+                                        <td><strong>{record ? `${record.compressorType}` : ''}</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Distributor Name</strong></td>
+                                        <td><strong>{record ? `${record.distributorName}` : ''}</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Motor HP</strong></td>
+                                        <td><strong>{record ? `${record.motorHP}` : ''}</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Nominal Package FlowRating</strong></td>
+                                        <td><strong>{record ? `${record.nominalPackageFlowRating}` : ''}</strong></td>
+                                    </tr>
+                                </tbody>
+                            </Table>
+                        </Col>
+                    </div>
+                </div>
             </CardBody>
         </Card>
         //</Panel>
@@ -225,7 +225,7 @@ const DeviceDetailedView = ({ record }) => {
 };
 
 export const showDevice = (props) => (
-    <Show title="Devices" {...props}  >        
+    <Show title="Devices" {...props}  >
         <DeviceDetailedView />
     </Show>
 );

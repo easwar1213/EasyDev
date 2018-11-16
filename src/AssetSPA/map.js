@@ -9,30 +9,27 @@ import { fetchStart, fetchEnd, GET_MANY_REFERENCE, showNotification } from 'reac
 import dataProvider from '../dataProvider';
 import Grid from "@material-ui/core/Grid";
 
-import Table from '@material-ui/core/Table';
+//import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-
-
+import Collapse from '../components/Collapse';
+import Table from '../components/table/Table';
 let tableData = [], EndDate = '', StartDate = '';
 export default class Map extends React.Component {
 
     constructor(props) {
         super(props)
 
-
         this.state = {
             markers: [],
             maps: [],
             startDate: '',
             endDate: '',
-
         }
-
     }
 
     componentDidMount() {
@@ -42,7 +39,7 @@ export default class Map extends React.Component {
 
     loadData() {
 
-        const { record} = this.props
+        const { record } = this.props
         console.log(this.state)
 
         fetchStart();
@@ -59,53 +56,50 @@ export default class Map extends React.Component {
                 let maps = response.data
                 tableData = response.data
                 this.setState({ maps })
-              
+
             })
             .catch(error => {
                 showNotification(error.message, 'error');
             })
             .finally(() => {
                 fetchEnd();
-
-
             });
-     
-
     }
 
     loadData = this.loadData.bind(this)
     handleStartDateChange(e) {
         console.log("start date")
-       // let startDate = e.target.value
-        StartDate =e.target.value;
-
-         console.log(this.state)
+        // let startDate = e.target.value
+        StartDate = e.target.value;
+        console.log(this.state)
     }
     handleStartDateChange = this.handleStartDateChange.bind(this);
 
 
     handleEndDateChange(e) {
         //let endDate = e.target.value
-       EndDate = e.target.value
-       // this.setState({ endDate })
-      
+        EndDate = e.target.value
+        // this.setState({ endDate })
+
     }
     handleEndDateChange = this.handleEndDateChange.bind(this);
 
 
-
     handleClickSubmit() {
-
-         this.state.endDate =EndDate;
-         this.state.startDate = StartDate
+        this.state.endDate = EndDate;
+        this.state.startDate = StartDate
         // this.setState({endDate : EndDate})
         // this.setState({startDate : StartDate})
         this.loadData();
-        
     }
+
     handleClickSubmit = this.handleClickSubmit.bind(this);
     // Render.
     render() {
+
+        const datagrdStyles = {
+            backgroundColor:'#999'
+          };
 
         // Map With A Marker.
         const MapWithAMarker = compose(
@@ -113,7 +107,7 @@ export default class Map extends React.Component {
                 //generate your API key
                 googleMapURL: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyD84CRFR44xSC242F5rPodUZ3CqKbUlqMw&v=3.exp&libraries=geometry,drawing,places',
                 loadingElement: <div style={{ height: `100%` }} />,
-                containerElement: <div className='map' style={{ height: `300px` }} />,
+                containerElement: <div className='map' style={{ height: `500px` }} />,
                 mapElement: <div style={{ height: `100%` }} />,
             }),
             withScriptjs,
@@ -129,84 +123,90 @@ export default class Map extends React.Component {
         return (
             <Container>
                 <Row>
-                    <section id="map">
-                        <div className="container">
-                            <h3 className="info-title"><span className="info-title-span">Location</span></h3>
-                            <div className="row">
-                                <div className="col-md-12 text-left">
-                                    <MapWithAMarker
-                                        //markers={this.state.markers}
-                                        maps={this.state.maps}
-                                        lat={28.4595}
-                                        lng={77.0266}
-                                        zoom={10}
-                                    />
+                    <Col xs={12} md={12} lg={12}>
+                        <section id="map">
+                            <div className="container">
+                            <h5 class="bold-text heading-txt">Map Location</h5>
+                                <div className="row">
+                                    <div className="col-md-12 text-left">
+                                        <MapWithAMarker
+                                            //markers={this.state.markers}
+                                            maps={this.state.maps}
+                                            lat={28.4595}
+                                            lng={77.0266}
+                                            zoom={10}
+                                        />
+                                    </div>
+                                </div>
+                                <div className="row text-center">
                                 </div>
                             </div>
-                            <div className="row text-center">
-                            </div>
-                        </div>
-                    </section>
+                        </section>
+                    </Col>
                 </Row>
                 <Row>
-                    <br />
-                    <br />
-                    <form noValidate>
-                        <span>
+                    <Col xs={12} md={12} lg={12}>
+                        <br />
+                        <br />
+                        <form noValidate>
+                            <span>
+                                <TextField
+                                    id="startDate"
+                                    label="Start Date"
+                                    type="date"
+                                    // value={this.state.startDate}
+                                    onChange={this.handleStartDateChange}
+                                    InputLabelProps={{
+                                        shrink: true,
+                                    }}
+                                />
+                                &nbsp;&nbsp;&nbsp;&nbsp;
                             <TextField
-                                id="startDate"
-                                label="Start Date"
-                                type="date"
-                                // value={this.state.startDate}
-                                onChange={this.handleStartDateChange}
-                                InputLabelProps={{
-                                    shrink: true,
-                                }}
-                            />
-                            &nbsp;&nbsp;&nbsp;&nbsp;
-                            <TextField
-                                id="endDate"
-                                label="End Date"
-                                type="date"
-                                // value={this.state.endDate}
-                                onChange={this.handleEndDateChange}
-                                InputLabelProps={{
-                                    shrink: true,
-                                }}
-                            />
+                                    id="endDate"
+                                    label="End Date"
+                                    type="date"
+                                    // value={this.state.endDate}
+                                    onChange={this.handleEndDateChange}
+                                    InputLabelProps={{
+                                        shrink: true,
+                                    }}
+                                />
 
-                            &nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;
                               <Button variant="contained" color="primary" label="Acknowledge" onClick={this.handleClickSubmit}>
-                                Submit
+                                    Submit
                      </Button>
-                        </span>
-                    </form>
-                    <br />
-
-                    <Table >
-                        <TableHead>
-                            <TableRow>
-                                <TableCell numeric>TimeStamp</TableCell>
-                                <TableCell numeric>Latitude</TableCell>
-                                <TableCell numeric>Longitude</TableCell>
-
-                            </TableRow>
-                        </TableHead>
-                        <TableBody>
-                            {tableData.map(row => {
-                                return (
-                                    <TableRow key={row.id}>
-                                        <TableCell numeric>{row.gps.timeStamp}</TableCell>
-                                        <TableCell numeric>{row.gps.data.location.lat}</TableCell>
-                                        <TableCell numeric>{row.gps.data.location.lon}</TableCell>
-
-                                    </TableRow>
-                                );
-                            })}
-                        </TableBody>
-                    </Table>
+                            </span>
+                        </form>
+                        </Col>
                 </Row>
-
+                <Row>
+                    <Col xs={12} md={12} lg={12}>
+                    <h5 class="bold-text heading-txt">Latitude and Longitude Details</h5>
+                    <div className="tbl-height">
+                    <Table responsive className='table-bordered'>
+                            <thead>
+                                <tr>
+                                    <th numeric>TimeStamp</th>
+                                    <th numeric>Latitude</th>
+                                    <th numeric>Longitude</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {tableData.map(row => {
+                                    return (
+                                        <tr key={row.id}>
+                                            <td numeric>{row.gps.timeStamp}</td>
+                                            <td numeric>{row.gps.data.location.lat}</td>
+                                            <td numeric>{row.gps.data.location.lon}</td>
+                                        </tr>
+                                    );
+                                })}
+                            </tbody>
+                        </Table>
+                        </div>
+                    </Col>
+                </Row>
             </Container>
         )
 
@@ -246,8 +246,6 @@ class AssetMarker extends React.Component {
                     <InfoWindow options={{ closeBoxURL: ``, enableEventPropagation: true }}>
                         <div style={{ backgroundColor: `white`, opacity: 1.00, padding: `20px` }}>
                             <div style={{ fontSize: `16px`, fontColor: `#08233B` }} >
-
-
                                 <b> Location: </b> <span>{gps.data.location.lon} , {gps.data.location.lat} </span>
                                 <br />
                                 <br />
@@ -263,9 +261,6 @@ class AssetMarker extends React.Component {
                     </InfoWindow>
                 )}
             </Marker>
-
         )
-
     }
-
 }

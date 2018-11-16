@@ -491,7 +491,7 @@ font-size: 0.9rem;
   flex-direction: row-reverse;
 }
 
-.MuiTableCell-root-599{
+.MuiTableCell-root,.MuiTableCell-body,.MuiTableCell-numeric{
   text-align: left !important;
 }
 
@@ -581,6 +581,13 @@ font-size: 0.9rem;
   transition: .3s;
 }
 
+.tbl-height{
+  height: 500px;
+  overflow-y:scroll;  
+}
 
+.tbl-height th{
+  color:white !important; 
+}
 
 

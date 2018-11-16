@@ -49,7 +49,7 @@ class DynamiclyRefreshedDoughnut extends PureComponent {
       //   <Doughnut data={this.state.data} />        
       // </Panel>
       <div>
-      <Doughnut height={280} data={this.state.data} />
+      <Doughnut height={330} data={this.state.data} />
   </div>
     )
   }

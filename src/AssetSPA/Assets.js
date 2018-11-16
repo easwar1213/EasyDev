@@ -9,7 +9,7 @@ import Panel from '../components/Panel';
 import AssetDetails from './AssetDetails';
 import { Card, CardBody } from 'reactstrap';
 import Collapse from '../components/Collapse';
-import {Badge} from 'reactstrap';
+import { Badge } from 'reactstrap';
 import '../index.css';
 
 export const AssetList = (props) => (
@@ -48,11 +48,11 @@ const AssetTitle = ({ record }) => {
 const AssetDetailsTab = ({ record }) => {
     return (
         <div>
-        {/* <Panel xs={12} md={12} lg={12} title="Device Status Distribution">  */}
-        {/* <Card>
+            {/* <Panel xs={12} md={12} lg={12} title="Device Status Distribution">  */}
+            {/* <Card>
             <CardBody>  */}
-                {/* <Collapse className="with-shadow" title="Asset Details "> */}
-                    {/* <div class="card">
+            {/* <Collapse className="with-shadow" title="Asset Details "> */}
+            {/* <div class="card">
                         <div class="card-body">
                             <table width="100%">
                                 <tr width="100%">
@@ -88,19 +88,19 @@ const AssetDetailsTab = ({ record }) => {
                             </table>
                         </div>
                     </div> */}
-                {/* </Collapse> */}
+            {/* </Collapse> */}
             {/* </CardBody>
         </Card> */}
-         {/* </Panel> */}
+            {/* </Panel> */}
             <Col md={12} lg={12} xs={12} className="table-class-new">
-                <br/>
+                <br />
                 <Col md={1} lg={1} className="table-class-new"></Col>
                 <Col md={10} lg={10} className="table-class-new">
                     <Table responsive className='table-bordered'>
                         <thead className="table-heading">
-                            <tr>
-                                <th>Field Name</th>
-                                <th>Values</th>
+                            <tr width="100%">
+                                <th width="50%">Field Name</th>
+                                <th width="50%">Values</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -145,82 +145,178 @@ const AssetDetailsTab = ({ record }) => {
                 </Col>
                 <Col md={1} lg={1} className="table-class-new"></Col>
             </Col>
-         </div>
+            {/* <Col md={12} lg={12} xs={12} className="table-class-new">
+                <br/>
+                <Col md={12} lg={12} className="table-class-new">
+                    <Table responsive className='table-bordered'>
+                        <thead className="table-heading">
+                            <tr>
+                                <th>Asset Name</th>
+                                <th>Device Model</th>
+                                <th>Make</th>
+                                <th>Model Year</th>
+                                <th>Compressor Controller</th>
+                                <th>Compressor Type</th>
+                                <th>Distributor Name</th>
+                                <th>Motor HP</th>
+                                <th>Nominal Package FlowRating</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>{record ? `${record.assetName}` : ''}</strong></td>
+                                <td><strong>{record ? `${record.model}` : ''}</strong></td>
+                                <td><strong>{record ? `${record.Make}` : ''}</strong></td>
+                                <td><strong>{record ? `${record.modelYear}` : ''}</strong></td>
+                                <td><strong>{record ? `${record.compressorController}` : ''}</strong></td>
+                                <td><strong>{record ? `${record.compressorType}` : ''}</strong></td>
+                                <td><strong>{record ? `${record.distributorName}` : ''}</strong></td>
+                                <td><strong>{record ? `${record.motorHP}` : ''}</strong></td>
+                                <td><strong>{record ? `${record.nominalPackageFlowRating}` : ''}</strong></td>
+                            </tr>
+                        </tbody>
+                    </Table>
+                </Col>
+            </Col> */}
+        </div>
     );
 };
 
 const AssetAlertsTab = ({ record }) => {
     return (
         <Panel xs={12} md={12} lg={12} title="Device Status">
-         <Table responsive className='table--bordered'>
-          <thead>
-          <tr>
-            <th>Status</th>
-            <th>Asset Name</th>
-            <th>Time Active</th>
-            <th>Alert Priority</th>
-            <th>Alert Status</th>
-            <th>Event</th>                     
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><Badge color='success'>{record ? `${record.assetName}` : ''}</Badge></td>
-            <td>1141233567</td>
-            <td>LS 110</td>
-            <td>Asset 3</td>
-            <td>2018/10/31</td>
-            <td>Show</td>           
-          </tr>
-          <tr>
-            <td><Badge color='success'>Available</Badge></td>
-            <td>1212343457</td>
-            <td>LS 90</td>
-            <td>Asset 1</td>
-            <td>2018/10/31</td>
-            <td>Show</td>                        
-          </tr>
-          <tr>
-            <td><Badge color='success'>Available</Badge></td>
-            <td>1212343458</td>
-            <td>LS 110</td>
-            <td>Asset 1</td>
-            <td>2018/10/31</td>
-            <td>Show</td>                       
-          </tr>
-          <tr>
-            <td><Badge color='success'>Available</Badge></td>
-            <td>1212123434</td>
-            <td>LS 110</td>
-            <td>Asset 2</td>
-            <td>2018/10/31</td>
-            <td>Show</td>                           
-          </tr>
-          <tr>
-            <td><Badge color='danger'>Unavailable</Badge></td>
-            <td>1121234345</td>
-            <td>LS 110</td>
-            <td>Asset 2</td>
-            <td>2018/10/31</td>
-            <td>Show</td>                          
-          </tr>
-          <tr>
-            <td><Badge color='danger'>Unavailable</Badge></td>
-            <td>1231212343</td>
-            <td>LS 110</td>
-            <td>Asset 3</td>
-            <td>2018/10/31</td>
-            <td>Show</td>                      
-          </tr>
-          </tbody>
-        </Table>
-      </Panel>
+            <Table responsive className='table--bordered'>
+                <thead>
+                    <tr>
+                        <th>Status</th>
+                        <th>Asset Name</th>
+                        <th>Time Active</th>
+                        <th>Alert Priority</th>
+                        <th>Alert Status</th>
+                        <th>Event</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><Badge color='success'>{record ? `${record.assetName}` : ''}</Badge></td>
+                        <td>1141233567</td>
+                        <td>LS 110</td>
+                        <td>Asset 3</td>
+                        <td>2018/10/31</td>
+                        <td>Show</td>
+                    </tr>
+                    <tr>
+                        <td><Badge color='success'>Available</Badge></td>
+                        <td>1212343457</td>
+                        <td>LS 90</td>
+                        <td>Asset 1</td>
+                        <td>2018/10/31</td>
+                        <td>Show</td>
+                    </tr>
+                    <tr>
+                        <td><Badge color='success'>Available</Badge></td>
+                        <td>1212343458</td>
+                        <td>LS 110</td>
+                        <td>Asset 1</td>
+                        <td>2018/10/31</td>
+                        <td>Show</td>
+                    </tr>
+                    <tr>
+                        <td><Badge color='success'>Available</Badge></td>
+                        <td>1212123434</td>
+                        <td>LS 110</td>
+                        <td>Asset 2</td>
+                        <td>2018/10/31</td>
+                        <td>Show</td>
+                    </tr>
+                    <tr>
+                        <td><Badge color='danger'>Unavailable</Badge></td>
+                        <td>1121234345</td>
+                        <td>LS 110</td>
+                        <td>Asset 2</td>
+                        <td>2018/10/31</td>
+                        <td>Show</td>
+                    </tr>
+                    <tr>
+                        <td><Badge color='danger'>Unavailable</Badge></td>
+                        <td>1231212343</td>
+                        <td>LS 110</td>
+                        <td>Asset 3</td>
+                        <td>2018/10/31</td>
+                        <td>Show</td>
+                    </tr>
+                </tbody>
+            </Table>
+        </Panel>
     );
 };
 
-export const showAsset = (props) => (
+//export const showAsset = (props) => (
 
+//     <Show title="Assets" {...props}  >
+//             <Map vale="check" />    
+//         {/* <Card>
+//             <CardBody>
+//                 <Collapse className="with-shadow" title="Device Details ">
+//                     <div class="card">
+//                         <div class="card-body">
+//                             <Map vale="check" />
+//                         </div>
+//                     </div>
+//                 </Collapse>
+//                 <Collapse className="with-shadow" title="Device Details ">
+//                     <div class="card">
+//                         <div class="card-body">
+//                             <SensorGroupTable />
+//                         </div>
+//                     </div>
+//                 </Collapse>
+//                 <Collapse className="with-shadow" title="Device Details ">
+//                     <div class="card">
+//                         <div class="card-body">
+//                             <AssetDetailsTab />
+//                         </div>
+//                     </div>
+//                 </Collapse>
+//                 <Collapse className="with-shadow" title="Device Details ">
+//                     <div class="card">
+//                         <div class="card-body">
+//                             <ReferenceManyField filters={<AlertFilter />}  {...props} label="Alerts" target="telematicsSerialNumber" source="telematicsSerialNumber" reference="getAssetAlerts" className="TableResponsive">
+//                                 <Datagrid>
+//                                     <TextField source="assetName" />
+//                                     <TextField label="Time Active" source="timeStamp" />
+//                                     <TextField source="alertPriority" />
+//                                     <TextField source="alertStatus" />
+//                                     <TextField source="event" />
+//                                 </Datagrid>
+//                             </ReferenceManyField>
+//                         </div>
+//                     </div>
+//                 </Collapse>
+//                 <Collapse className="with-shadow" title="Device Details ">
+//                     <div class="card">
+//                         <div class="card-body">
+//                             <ReferenceManyField filters={<AssetFilter />} label="Maintenance" target="telematicsSerialNumber" source="telematicsSerialNumber" reference="getAssetMaintenance" className="TableResponsive">
+//                                 <Datagrid>
+//                                     <TextField source="plan" />
+//                                     <TextField source="serviceRunHours" />
+//                                     <TextField source="lastService" />
+//                                     <TextField source="status" />
+//                                     <TextField source="assetName" />
+//                                 </Datagrid>
+//                             </ReferenceManyField>
+//                         </div>
+//                     </div>
+//                 </Collapse>
+//             </CardBody>
+//         </Card>     */}
+//     </Show >
+// );
+
+
+export const showAsset = (props) => (
     <Show title="Assets" {...props}  >
+    
         <TabbedShowLayout >
 
             <Tab label="Location" >
@@ -232,63 +328,14 @@ export const showAsset = (props) => (
             </Tab>
 
 
-            <Tab label="Details">
-                {/* <Row>
-                    <Col xs={12} sm={6}>
-                        <TextField label="Name" source="assetName" />
-                    </Col>
-                    <Col xs={12} sm={6}>
-                        <TextField label="Model" source="model" />
-                    </Col>
-                    <Col xs={12} sm={6}>
-                        <TextField label="Make" source="make" />
-                    </Col>
-                    <Col xs={12} sm={6}>    
-                        <TextField label="Model Year" source="modelYear" />
-                    </Col>
-                    <Col xs={12} sm={6}>    
-                        <TextField label="Compressor Controller" source="compressorController" />
-                    </Col>
-                    <Col xs={12} sm={6}>    
-                        <TextField label="Compressor Type" source="compressorType" />
-                    </Col>
-                    <Col xs={12} sm={6}>
-                        <TextField label="Distributor Name" source="distributorName" />
-                    </Col>
-                    <Col xs={12} sm={6}>
-                        <TextField label="Motor HP" source="motorHP" />
-                    </Col>
-                    <Col xs={12} sm={6}>
-                        <TextField label="Nominal Package FlowRating" source="nominalPackageFlowRating" />
-                    </Col>
-                </Row> */}
-
-                <AssetDetailsTab />
-
-                {/* <TextField label="Name" source="assetName" />
-
-                <TextField label="Model" source="model" />
-
-                <TextField label="Make" source="make" />
-
-                <TextField label="Model Year" source="modelYear" />
-
-                <TextField label="Compressor Controller" source="compressorController" />
-
-                <TextField label="Compressor Type" source="compressorType" />
-
-                <TextField label="Distributor Name" source="distributorName" />
-
-                <TextField label="Motor HP" source="motorHP" />
-
-                <TextField label="Nominal Package FlowRating" source="nominalPackageFlowRating" /> */}
-
-
-
+            <Tab label="Details">                
+                <AssetDetailsTab />              
             </Tab>
 
             <Tab label="Alerts" filters={<AlertFilter />}>
-                <ReferenceManyField filters={<AlertFilter />}  {...props} label="Alerts" target="telematicsSerialNumber" source="telematicsSerialNumber" reference="getAssetAlerts" className="TableResponsive">
+            <h5 class="bold-text heading-txt">Alert Details</h5>
+                <ReferenceManyField filters={<AlertFilter />}  {...props} label="" target="telematicsSerialNumber" source="telematicsSerialNumber" reference="getAssetAlerts" className="TableResponsive">
+                
                     {/* <List {...props}filters={<AlertFilter />} filter={{ telematicsSerialNumber:"telematicsSerialNumber"}} title="Alerts"> */}
                     <Datagrid>
                         <TextField source="assetName" />
@@ -302,7 +349,8 @@ export const showAsset = (props) => (
             </Tab>
 
             <Tab label="Maintenance">
-                <ReferenceManyField filters={<AssetFilter />} label="Maintenance" target="telematicsSerialNumber" source="telematicsSerialNumber" reference="getAssetMaintenance" className="TableResponsive">
+            <h5 class="bold-text heading-txt">Maintenance Details</h5>
+                <ReferenceManyField filters={<AssetFilter />} label="" target="telematicsSerialNumber" source="telematicsSerialNumber" reference="getAssetMaintenance" className="TableResponsive">
                     <Datagrid>
                         <TextField source="plan" />
                         <TextField source="serviceRunHours" />
@@ -318,6 +366,7 @@ export const showAsset = (props) => (
 
     </Show >
 );
+
 
 const AssetFilter = (props) => (
     <Filter {...props}>
