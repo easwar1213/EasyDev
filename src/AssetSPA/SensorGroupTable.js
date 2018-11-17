@@ -145,8 +145,8 @@ class SensorGroupTable extends React.Component {
                 {this.state.showSensorGroupList && (
                     <div>
                         <Paper className={classes.root}>
-                        <Table responsive >
-                                <TableHead>
+                        <Table responsive className='table-bordered' >
+                                <TableHead className="table-heading">
                                     <TableRow>
                                         <TableCell>Sensor Group</TableCell>
                                         <TableCell >Sensor Count</TableCell>

@@ -333,9 +333,8 @@ export const showAsset = (props) => (
             </Tab>
 
             <Tab label="Alerts" filters={<AlertFilter />}>
-            <h5 class="bold-text heading-txt">Alert Details</h5>
-                <ReferenceManyField filters={<AlertFilter />}  {...props} label="" target="telematicsSerialNumber" source="telematicsSerialNumber" reference="getAssetAlerts" className="TableResponsive">
-                
+            {/* <h5 class="bold-text heading-txt">Alert Details</h5> */}
+                <ReferenceManyField filters={<AlertFilter />}  {...props} label="" target="telematicsSerialNumber" source="telematicsSerialNumber" reference="getAssetAlerts" className="TableResponsive">                
                     {/* <List {...props}filters={<AlertFilter />} filter={{ telematicsSerialNumber:"telematicsSerialNumber"}} title="Alerts"> */}
                     <Datagrid>
                         <TextField source="assetName" />
@@ -349,7 +348,7 @@ export const showAsset = (props) => (
             </Tab>
 
             <Tab label="Maintenance">
-            <h5 class="bold-text heading-txt">Maintenance Details</h5>
+                {/* <h5 class="bold-text heading-txt">Maintenance Details</h5> */}
                 <ReferenceManyField filters={<AssetFilter />} label="" target="telematicsSerialNumber" source="telematicsSerialNumber" reference="getAssetMaintenance" className="TableResponsive">
                     <Datagrid>
                         <TextField source="plan" />

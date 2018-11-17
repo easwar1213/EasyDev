@@ -525,7 +525,7 @@ font-size: 0.9rem;
   box-shadow: none !important;
 }
 
-.MuiPaper-elevation1-42 {
+.MuiPaper-elevation1-42, .MuiPaper-elevation1-165 {
   box-shadow: none !important;
 }
 
@@ -549,6 +549,20 @@ font-size: 0.9rem;
   background-color: #646777 !important;
 }
 
+.Datagrid-table-249 td, .datagrid-body td, .Datagrid-table-71 th, .TableResponsive th {
+  border: 1px solid #ccc !important;
+}
+
+.TableResponsive thead {
+  background-color: #646777 !important;
+  color: #fff !important;
+  border: 1px solid #ccc !important;
+}
+
+.TableResponsive thead span{
+  color: #fff !important;
+}
+
 .table-bordered {
   border: 1px solid #dee2e6 !important;
 }
@@ -562,6 +576,7 @@ font-size: 0.9rem;
 .TableResponsive, .Datagrid-table-71 {
   width: 100% !important;
   overflow-x: auto;
+  margin-top: -8px;
 }
 
 .MuiFormLabel-root-50 {
@@ -590,4 +605,14 @@ font-size: 0.9rem;
   color:white !important; 
 }
 
+.Datagrid-headerCell-251 {
+  border: 1px solid #ccc !important;
+}
 
+.Datagrid-headerCell-73, .MuiTableCell-root-490:last-child {
+  padding: 0 12px !important;
+}
+
+.MuiAppBar-colorDefault-56 {
+  width: 85% !important;
+}
