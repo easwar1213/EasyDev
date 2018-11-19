@@ -25,7 +25,7 @@ import dataProvider from '../dataProvider'
 import Loader from '../Loader'
 import Panel from '../components/Panel';
 import RandomAnimatedLine from './RandomAnimatedLine';
-import SimpleLineChart from './SimpleLineChart';
+import SimpleLineChart from './StatusTrendLineChart';
 
 const styles = theme => ({
     card: {
