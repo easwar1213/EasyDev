@@ -59,7 +59,7 @@ table tbody td{
   border-radius:5px !important;
 }
 .layout div[class^="MuiDrawer"] svg[class^="MuiSvgIcon"]  { width: 20px !important; height: 20px !important;}
-.layout div[class^="MuiDrawer"] div[class^="Menu"]{ padding-top:15px;}
+/* .layout div[class^="MuiDrawer"] div[class^="Menu"]{ padding-top:15px;} */
 .layout div[class^="MuiDrawer"] div[class^="Menu"] a{ padding-left:18px;}
 .layout div[class^="MuiDrawer"] div[class^="Menu"] a > span[class^="MenuItemLink"] { padding-right:17px !important; position:relative; top:-2px;}
 .layout div[class^="MuiDrawer"] div[class^="Menu"] a { font-size:15px; font-weight:400;}
@@ -162,7 +162,7 @@ div[class^="MuiDrawer"] div[class^="MuiPaper"] {
 } 
 label[class^="MuiFormLabel"] > span{ font-size:22px !important; color:#646777 !important; font-weight:bold; }
 .show-page div[class^="MuiFormControl"]{ width:100%; display:block;}
-form div[class^="MuiFormControl"]{ width:auto !important; display:inline-block !important;}
+form div[class^="MuiFormControl"]{ display:inline-block !important;}
 .show-page div[class^="MuiFormControl"] div[class^="Labeled"]{ padding:0 !important;}
 .show-page div[class^="MuiFormLabel"] { font-size: 1.2rem !important; color: rgba(0, 0, 0, 0.9);}
 
@@ -615,4 +615,32 @@ font-size: 0.9rem;
 
 .MuiAppBar-colorDefault-56 {
   width: 85% !important;
+}
+
+.SelectFieldDiv {
+  width: 300px !important;
+}
+.AddBtnClass {
+  padding: 20px;
+}
+.SimpleFormIterator-root-254 {
+  line-height: 4;
+}
+.TableBorderClass {
+  border-right: 3px solid #646777;
+}
+.MuiPaper-elevation4-20 {
+  box-shadow: none !important;
+}
+.MuiTableCell-root-338:last-child {
+  padding-right: 0px !important;
+}
+.MuiList-padding-164 {
+  padding: 0px !important;
+}
+.EnhancedTable-root-323 {
+  margin-top: 3px !important;
+}
+.EnhancedTableToolbar-highlight-327 {
+  background-color:#646777 !important;
 }

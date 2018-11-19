@@ -351,7 +351,7 @@ class EnhancedTable extends React.Component {
                  // console.log(n)
                   const isSelected = this.isSelected(n.sensorName);
                   return (
-                    <TableRow
+                    <TableRow className="TableBorderClass"
                       hover
                       onClick={event => this.handleClick(event, n)}
                       role="checkbox"

@@ -166,13 +166,14 @@ export default class Mymap extends React.Component {
 
         // Return Map.
         return (
-            <Container style={{  minHeight: '86vh'}} fluid={true}>
-                <Row>
-                {/* <SimpleModal action ={this.handleClickSubmitOnChild}/> */}
-                <FilterButton action ={this.handleClickSubmitOnChild} />
-                </Row>    
-                <Row>
+            // <Container style={{  minHeight: '86vh'}} fluid={true}>
+            //     <Row>
+            //     {/* <SimpleModal action ={this.handleClickSubmitOnChild}/> */}
+            //     <FilterButton action ={this.handleClickSubmitOnChild} />
+            //     </Row>    
+            //     <Row>
                     <section id="map">
+                    <FilterButton action ={this.handleClickSubmitOnChild} />
                         <div className="container">
                             <h3 className="info-title"><span className="info-title-span"></span></h3>
                             <div className="row">
@@ -190,8 +191,8 @@ export default class Mymap extends React.Component {
                             </div>
                         </div>
                     </section>
-                </Row>
-            </Container>
+            //     </Row>
+            // </Container>
         )
 
     }

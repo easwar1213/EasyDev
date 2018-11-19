@@ -224,6 +224,7 @@ class Menu extends React.Component {
                         </List>
                     </div>
 
+                    {/* <br />
                     <br />
                     <br />
                     <br />
@@ -233,8 +234,7 @@ class Menu extends React.Component {
                     <br />
                     <br />
                     <br />
-                    <br />
-                    <br />
+                    <br /> */}
 
                     <Divider />
                     <div className={classes.root}>

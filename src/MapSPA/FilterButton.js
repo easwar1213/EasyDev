@@ -173,7 +173,7 @@ class FilterButton extends Component {
                             {/* <TextField source={record.alertName}/> */}
                             <FormControl >
                                 <InputLabel htmlFor="select-multiple-checkbox">Alert</InputLabel>
-                                <Select
+                                <Select className="SelectFieldDiv"
                                     multiple
 
                                     value={this.state.alertPriority}
@@ -195,7 +195,7 @@ class FilterButton extends Component {
                             <br />
                             <FormControl>
                                 <InputLabel htmlFor="select-multiple-checkbox">Maintenance</InputLabel>
-                                <Select
+                                <Select className="SelectFieldDiv"
                                     multiple
 
                                     value={this.state.maintenanceStatus}
@@ -213,8 +213,8 @@ class FilterButton extends Component {
                                     ))}
                                 </Select>
                             </FormControl>
-                            <ArrayInput label="Add Attribute Filter" source="attributes" >
-                                <SimpleFormIterator>
+                            <ArrayInput label="Add Attribute Filter" source="attributes" className="SelectFieldDiv">
+                                <SimpleFormIterator className="AddBtnClass">
                                     <ReferenceInput label="Attribute" source="dataPoint" reference="getListOfAttributes">
                                         <SelectInput optionText="id" />
                                     </ReferenceInput>
