@@ -42,10 +42,10 @@ import Typography from '@material-ui/core/Typography';
 
 const items = [
     // { name: '', label: 'Dashboard', icon: <LocationIcon /> },
-    { name: 'getMapViewData', label: 'Map', icon: <LocationIcon /> },
+    //{ name: 'getMapViewData', label: 'Map', icon: <LocationIcon /> },
     { name: 'getAssetList', label: 'Assets', icon: <AssetIcon /> },
     { name: 'getDeviceList', label: 'Devices', icon: <DeviceIcon /> },
-    { name: 'getListOfAnalyticsReports', label: 'Analytics', icon: <AnalytcisIcon /> },
+    //{ name: 'getListOfAnalyticsReports', label: 'Analytics', icon: <AnalytcisIcon /> },
     // { name: 'getListOfCustomers', label: 'Parts', icon: <PartsIcon /> }
 ];
 
@@ -112,7 +112,7 @@ class Menu extends React.Component {
                             />
                         ))}
                     </div>
-                    <div className={classes.root}>
+                    {/* <div className={classes.root}>
                         <List>
                             <ListItem className={classes.item} button onClick={this.handleClick}>
                                 <ListItemIcon>
@@ -206,7 +206,7 @@ class Menu extends React.Component {
                                     <ListItemIcon>
                                         <MenuItemLink to="/getListOfCustomers" primaryText="Customers" onClick={onMenuClick} />
                                     </ListItemIcon>
-                                </ListItem> */}
+                                </ListItem> 
 
                                     <ListItem button className={classes.nested} >
                                         <ListItemIcon>
@@ -218,11 +218,11 @@ class Menu extends React.Component {
                                     <ListItemIcon>
                                         <MenuItemLink to="/getListOfAlertConfiguration" primaryText="Alert Configuration" onClick={onMenuClick} />
                                     </ListItemIcon>
-                                </ListItem> */}
+                                </ListItem> 
                                 </List>
                             </Collapse>
                         </List>
-                    </div>
+                    </div> */}
 
                     {/* <br />
                     <br />
@@ -236,8 +236,8 @@ class Menu extends React.Component {
                     <br />
                     <br /> */}
 
-                    <Divider />
-                    <div className={classes.root}>
+                    {/* <Divider /> */}
+                    {/* <div className={classes.root}>
                         <List>
                             <ListItem className={classes.item} button >
                                 <ListItemIcon>
@@ -249,7 +249,7 @@ class Menu extends React.Component {
                                  />
                             </ListItem>
                         </List>
-                    </div>
+                    </div> */}
                     <div className={classes.root}>
                         <List>
                             <ListItem className={classes.item} button onClick ={this.changeRoute} >

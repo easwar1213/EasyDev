@@ -55,19 +55,19 @@ import {PartsDashboard} from '././PartsSPA/PartsDashboard'
         <Admin 
         title="Fleet-Admin"
         catchAll={NotFound}
-        dashboard={Dashboard}
+        //dashboard={Dashboard}
         authProvider={authProvider}
         dataProvider={dataProvider}
         loginPage={Login}
         appLayout={CustomLayout}
       >
         
-        <Resource
+        {/* <Resource
           name="getMapViewData"
           options={{ label: 'Map' }}
           list={MapView}
           icon={LocationIcon}
-        /> 
+        />  */}
   
   
         {/* <Resource
@@ -95,7 +95,7 @@ import {PartsDashboard} from '././PartsSPA/PartsDashboard'
           icon={DeviceIcon}
         />
   
-        <Resource
+        {/* <Resource
           name="getAlerts"
           options={{ label: 'Alerts Dashboard' }}
           list={Alerts}
@@ -164,13 +164,13 @@ import {PartsDashboard} from '././PartsSPA/PartsDashboard'
           list={PartsDashboard}
         //  show={ShowCustomerAssets}
           //icon={AnalytcisIcon}
-        />
+        /> */}
   
    
   
   
   
-        <Resource name="AlertPriorityStatistics" />
+        {/* <Resource name="AlertPriorityStatistics" /> */}
         <Resource name="getAssetListForReference" />
   
         <Resource name="getListOfDataPoints" />
